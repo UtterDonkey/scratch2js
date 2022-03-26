@@ -45,8 +45,6 @@ function point_in_direction(dir){
   updateDirection();
 };
 
-
-
 function initSprite(spriteID, data){
     updateSprite(spriteID, data);
     setTimeout(function(){initSprite(spriteID, data);}, 10);
