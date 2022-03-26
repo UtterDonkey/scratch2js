@@ -46,7 +46,7 @@ function point_in_direction(dir){
 };
  function point_towards_mouse(){
   point_in_direction(getDirection(spriteData.x, spriteData.y, globalValues.mouseX, globalValues.mouseY));
- }
+ };
 function initSprite(spriteID, data){
     updateSprite(spriteID, data);
     setTimeout(function(){initSprite(spriteID, data);}, 10);
@@ -55,7 +55,7 @@ function initSprite(spriteID, data){
 function updateSprite(spriteID, data){
     let x = data.x + (window.screen.width/2);
     let y = data.y + (window.screen.height/2);
-    spriteID.style.left = x - (spriteID.height/2);
-    spriteID.style.top = y - (spriteID.width/2);
+    spriteID.style.left = x - (spriteID.width*Math.PI);
+    spriteID.style.top = y - (spriteID.height*(Math.PI/1.25));
     spriteID.style.transform = `rotate(${data.direction-90}deg)`;
 };
