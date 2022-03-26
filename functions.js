@@ -44,3 +44,18 @@ function point_in_direction(dir){
   spriteData.direction = dir;
   updateDirection();
 };
+
+
+
+function initSprite(spriteID, data){
+    updateSprite(spriteID, data);
+    setTimeout(function(){initSprite(spriteID, data);}, 10);
+};
+
+function updateSprite(spriteID, data){
+    let x = data.x + (window.screen.width/2);
+    let y = data.y + (window.screen.height/2);
+    spriteID.style.left = x - (spriteID.height/2);
+    spriteID.style.top = y - (spriteID.width/2);
+    spriteID.style.transform = `rotate(${data.direction-90}deg)`;
+};
