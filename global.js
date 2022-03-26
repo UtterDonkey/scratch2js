@@ -1,8 +1,11 @@
 const globalValues = {}
 
 document.body.addEventListener('mousemove', function(e){
-  globalValues.mouseX = e.clientX+(window.screenX/2);
-  globalValues.mouseY = e.clientY+(window.screenY/2);
+    let x = e.screenX - (window.screen.width/2);
+    let y = (window.screen.height/2) - e.screenY;
+    globalValues.mouseX = x;
+    globalValues.mouseY = y;
+  
 });
 
 function getDirection(startX, startY, endX, endY){
