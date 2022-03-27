@@ -111,7 +111,26 @@ Pause all scripts for `n` seconds.
 #### `yield`
 In loops, wait one frame before next repeat. Must be at end of function.
 
+#### `repeat`
+Loop script `n` times. Same parameters as `run`.
 
+Example:
+```
+getSprite(mySprite).run(function(){
+repeat(90, function(){
+    rotate_right(2);
+});
+});
+// same us rotate_right(180)
+
+getSprite(mySprite).run(function(){
+repeat(90, function(){
+    rotate_right(2);
+    yield();
+});
+});
+
+// rotate 180 degrees over 90 frames
 ### Global Values
 
 Global values can be accessed from the `globalValues` object.
