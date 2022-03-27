@@ -32,8 +32,11 @@ function createSprite(){
   sprite.layer = getMaxLayer()+1;
   sprite.costume = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/7e24c99c1b853e52f8e7f9004416fa34.png/get';
   sprite.run = function(script, param){
-    const spriteData = this;
+    this.spriteData = this;
+    spriteData = this.spriteData;
+    spriteData;
     script(param);
+    spriteData = undefined;
   };
   initSprite(document.getElementById('sprite#' + id), sprite);
   return id;
