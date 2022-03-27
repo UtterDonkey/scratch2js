@@ -45,15 +45,15 @@ function point_in_direction(dir){
   point_in_direction(getDirection(spriteData.x, spriteData.y, globalValues.mouseX, globalValues.mouseY));
  };
 
-function setCostume(src){
+function set_costume(src){
     spriteData.costume = src;
 };
 
-function setSize(size){
+function set_size(size){
   spriteData.size = size;
 };
 
-function changeSize(size){
+function change_size(size){
   setSize(spriteData.size + size);
 };
 
