@@ -25,7 +25,7 @@ spriteObject.run(function(){go_to(0, 0)});
 
 spriteObject.run(function(){
 // go to mouse
-go_to(globalValues.mouseX, globalValues.mouseY);
+go_to_mouse();
 // point towards centre
 point_in_direction(getDirection(spriteData.x, spriteData.y, 0, 0));
 });
