@@ -105,7 +105,7 @@ Move forward/backward `n` layers.
 #### `go_to_front`, `go_to_back`
 Go infront of/behind all other sprites.
 
-#### `pause`
+#### `await pause`
 Pause current thread for `n` seconds.
 
 ### Loops
