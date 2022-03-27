@@ -16,6 +16,9 @@ function initSprite(spriteID, data){
 function createSprite(){
   sprites.push({});
   id = sprites.length - 1;
+  element = document.createElement('img');
+  element.id = 'sprite#' + id;
+  document.body.appendChild(element);
   sprite = sprites[id];
   sprite.direction = 90;
   sprite.x = 0;
@@ -25,6 +28,7 @@ function createSprite(){
     spriteData = this;
     eval(script)
   };
+  initSprite(document.getElementById('sprite#' + id), sprite);
   return id;
 };
 
