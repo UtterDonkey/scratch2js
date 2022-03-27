@@ -26,9 +26,9 @@ spriteObject = getSprite(mySprite);
 spriteObject.run(`go_to(globalValues.mouseX, globalValues.mouseY)`);
 ```
 
-## Scripts
+### Scripts
 
-### `move_steps`
+#### `move_steps`
 Move sprite n pixels in current direction.
 
 Example:
