@@ -20,6 +20,7 @@ function getMaxLayer(){
         max = temp[i].layer;  
       };
     };
+    return max;
 };
 
 function getSpritesUp(){
