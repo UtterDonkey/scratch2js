@@ -13,7 +13,7 @@ function updateSprite(spriteID, data){
 
 function initSprite(spriteID, data){
     updateSprite(spriteID, data);
-    setTimeout(function(){initSprite(spriteID, data);}, 10);
+    data.renderProcess = setTimeout(function(){initSprite(spriteID, data);}, 10);
 };
 
 function createSprite(){
