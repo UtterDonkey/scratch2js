@@ -105,6 +105,12 @@ Move forward/backward `n` layers.
 #### `go_to_front`, `go_to_back`
 Go infront of/behind all other sprites.
 
+#### `pause`
+Pause all scripts for `n` seconds.
+
+#### `yield`
+In loops, wait one frame before next repeat. Must be at end of function.
+
 
 ### Global Values
 
