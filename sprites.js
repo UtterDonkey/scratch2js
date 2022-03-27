@@ -19,6 +19,7 @@ function createSprite(){
   id = sprites.length - 1;
   element = document.createElement('img');
   element.id = 'sprite#' + id;
+  element.style.position = 'fixed';
   document.body.appendChild(element);
   sprite = sprites[id];
   sprite.direction = 90;
