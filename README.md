@@ -16,14 +16,35 @@ spriteObject = getSprite(mySprite);
 
 ### Executing Scripts
 
-To execute a script, use the `run()` function in a sprite object. It requires 1 parameter which is a the string of the script to be executed. Multiple scripts can also be run, seperated by semicolons.
+To execute a script, use the `run()` function in a sprite object. It requires 2 parameters, the first is the name of the script, the second is the parameter wrapped in brakets. If the script requires multiple parameters or you wich to run multiple scripts, use a function.
+
+Example
+```
+spriteObject.run(function(){go_to(0, 0)});
+// will centre sprite
+
+spriteObject.run(function(){
+// go to mouse
+go_to(globalValues.mouseX, globalValues.mouseY);
+// point towards centre
+point_in_direction(getDirection(spriteData.x, spriteData.y, 0, 0));
+});
+// will go to mouse pointer and point towards centre
+
+spriteObject.run(hide);
+// will hide sprite
+
+spriteObject.run(go_forward, 2);
+// will move the sprite forward 2 layers
+
+```
 
 Example:
 ```
 // move sprite to mouse pointer
 mySprite = createSprite();
 spriteObject = getSprite(mySprite);
-spriteObject.run(`go_to(globalValues.mouseX, globalValues.mouseY)`);
+spriteObject.run(function(){go_to(globalValues.mouseX, globalValues.mouseY)});
 ```
 
 ### Scripts
@@ -33,7 +54,7 @@ Move sprite `n` pixels in current direction.
 
 Example:
 ```
-spriteObject.run(`move_steps(10)`);
+spriteObject.run(move_steps, 10);
 // will move sprite to 0, 10 presuming its direction is 90
 ```
 
@@ -48,7 +69,7 @@ Rotate left/right `n` degrees.
 
 Example:
 ```
-spriteObject.run(`rotate_right(45)`);
+spriteObject.run(rotate_right, 45);
 // will rotate sprite to 135° presuming its direction is 90°
 ```
 
@@ -64,7 +85,7 @@ Requires 4 inputs, first for start X (usually sprite X), second for start Y (usu
 
 Example:
 ```
-spriteObject.run(`point_in_direction(getDirection(spriteData.x, spriteData.y, 0, 0))`);
+spriteObject.run(function(){point_in_direction(getDirection(spriteData.x, spriteData.y, 0, 0))});
 // will point towards centre
 ```
 
@@ -91,3 +112,8 @@ Global values can be accessed from the `globalValues` object.
 
 #### `mouseX`, `mouseY`
 Returns mouse X and Y position.
+
+
+### Sprite Data
+
+The sprite's object can be accessed through `spriteData` in a function or script.
