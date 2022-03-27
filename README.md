@@ -44,7 +44,7 @@ Example:
 // move sprite to mouse pointer
 mySprite = createSprite();
 spriteObject = getSprite(mySprite);
-spriteObject.run(function(){go_to(globalValues.mouseX, globalValues.mouseY)});
+spriteObject.run(go_to_mouse);
 ```
 
 ### Scripts
