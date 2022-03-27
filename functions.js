@@ -73,4 +73,7 @@ function updateSprite(spriteID, data){
     spriteID.style.top = y - (spriteID.height/2);
     spriteID.style.transform = `rotate(${data.direction-90}deg) scale(${data.size/100})`;
 };
+function initSprite(spriteID, data){
+    updateSprite(spriteID, data);
+    setTimeout(function(){initSprite(spriteID, data);}, 10);
 };
