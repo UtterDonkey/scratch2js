@@ -16,7 +16,7 @@ spriteObject = getSprite(mySprite);
 
 ### Executing Scripts
 
-To execute a script, use the `run()` function in a sprite object. It requires 1 parameter which is a the string of the script to be executed. Multiple scripts can also be run, seperated by semicolons;
+To execute a script, use the `run()` function in a sprite object. It requires 1 parameter which is a the string of the script to be executed. Multiple scripts can also be run, seperated by semicolons.
 
 Example:
 ```
