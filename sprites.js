@@ -28,6 +28,7 @@ function createSprite(){
   sprite.y = 0;
   sprite.show = true;
   sprite.size = 100;
+  sprite.layer = getMaxLayer()+1;
   sprite.costume = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/7e24c99c1b853e52f8e7f9004416fa34.png/get';
   sprite.run = function(script){
     spriteData = this;
