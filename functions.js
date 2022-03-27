@@ -29,6 +29,10 @@ function go_to(x, y){
   set_y(y);
 };
 
+function go_to_mouse(){
+  go_to(globalValues.mouseX, globalValues.mouseY);
+};
+
 function rotate_left(deg){
   point_in_direction(spriteData.direction - deg);
 };
