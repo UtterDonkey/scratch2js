@@ -21,3 +21,10 @@ function getMaxLayer(){
       };
     };
 };
+
+function getSpritesUp(){
+    const temp = sprites;
+    for(i = 0; i < temp.length; i++){
+        temp[i].layer = temp[i].layer+1;
+    };
+};
