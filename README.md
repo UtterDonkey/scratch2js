@@ -78,6 +78,13 @@ Set sprite's size to `n%`.
 #### `change_size`
 Change sprite's size by `n%`.
 
+#### `go_forward`, `go_backward`
+Move forward/backward `n` layers.
+
+#### `go_to_front`, `go_to_back`
+Go infront of/behind all other sprites.
+
+
 ### Global Values
 
 Global values can be accessed from the `globalValues` object.
