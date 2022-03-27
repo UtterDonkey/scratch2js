@@ -82,8 +82,8 @@ function go_backward(layers){
   spriteData.layer = spriteData.layer - layers;
 };
 
-function repeat(n, function, params){
+function repeat(n, script, params){
  for(i = 0; i < n; i++){
-  function(params); 
+  script(params); 
  };
 };
