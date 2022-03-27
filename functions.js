@@ -73,3 +73,11 @@ function go_to_back(){
   moveSpritesUp();
   spriteData.layer = 0;
 };
+
+function go_forward(layers){
+  spriteData.layer = spriteData.layer + layers;
+};
+
+function go_backward(layers){
+  spriteData.layer = spriteData.layer - layers;
+};
