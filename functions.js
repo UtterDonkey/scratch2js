@@ -24,17 +24,17 @@ function set_y(y){
   spriteData.y = y;
 };
 
+function go_to(x, y){
+  set_x(x);
+  set_y(y);
+};
+
 function rotate_left(deg){
   point_in_direction(spriteData.direction - deg);
 };
 
 function rotate_right(deg){
   point_in_direction(spriteData.direction + deg);
-};
-
-function go_to(x, y){
-  set_x(x);
-  set_y(y);
 };
 
 function point_in_direction(dir){
