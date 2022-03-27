@@ -62,7 +62,7 @@ function show(){
 };
 
 function hide(){
-  spriteData.hide = false;
+  spriteData.show = false;
 };
 
 function go_to_front(){
@@ -80,4 +80,10 @@ function go_forward(layers){
 
 function go_backward(layers){
   spriteData.layer = spriteData.layer - layers;
+};
+
+function repeat(n, function, params){
+ for(i = 0; i < n; i++){
+  function(params); 
+ };
 };
