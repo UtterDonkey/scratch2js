@@ -1,6 +1,7 @@
 const sprites = []
 
 function updateSprite(spriteID, data){
+    spriteID.src = data.costume;
     let x = data.x + (window.screen.width/2);
     let y = -data.y + (window.screen.height/2);
     spriteID.style.left = x - (spriteID.width/2);
@@ -24,6 +25,7 @@ function createSprite(){
   sprite.x = 0;
   sprite.y = 0;
   sprite.size = 100;
+  sprite.costume = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/7e24c99c1b853e52f8e7f9004416fa34.png/get';
   sprite.run = function(script){
     spriteData = this;
     eval(script)
