@@ -39,14 +39,6 @@ spriteObject.run(go_forward, 2);
 
 ```
 
-Example:
-```
-// move sprite to mouse pointer
-mySprite = createSprite();
-spriteObject = getSprite(mySprite);
-spriteObject.run(go_to_mouse);
-```
-
 ### Scripts
 
 #### `move_steps`
