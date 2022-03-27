@@ -46,7 +46,7 @@ function point_in_direction(dir){
  };
 
 function setCostume(src){
-    spriteID.src = src;
+    spriteData.costume = src;
 };
 
 function setSize(size){
