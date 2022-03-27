@@ -18,7 +18,7 @@ spriteObject = getSprite(mySprite);
 
 To execute a script, use the `run()` function in a sprite object. It requires 2 parameters, the first is the name of the script, the second is the parameter. If the script requires multiple parameters or to run multiple scripts, use a function.
 
-Example
+Example:
 ```
 spriteObject.run(function(){go_to(0, 0)});
 // will centre sprite
