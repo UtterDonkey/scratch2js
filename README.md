@@ -106,46 +106,43 @@ Move forward/backward `n` layers.
 Go infront of/behind all other sprites.
 
 #### `pause`
-Pause all scripts for `n` seconds.
+Pause current thread for `n` seconds.
 
-#### `yield`
-In loops, wait one frame before next repeat. Must be at end of function.
+### Loops
+Loops can be used for any script and are not run from `spriteObject.run`.
 
 #### `repeat`
-Loop script `n` times. Same parameters as `run`.
+Loop script `n` times. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, boolean, for whether or not to animate the frames.
 
 Example:
 ```
-getSprite(mySprite).run(function(){
+
 repeat(90, function(){
+getSprite(mySprite).run(function(){
     rotate_right(2);
 });
 });
 // same us rotate_right(180)
 
-getSprite(mySprite).run(function(){
 repeat(90, function(){
+getSprite(mySprite).run(function(){
     rotate_right(2);
-    yield();
-});
+}, true);
 });
 
 // rotate 180 degrees over 90 frames
 ```
 
 #### `forever`
-Loop script forever. Always Yields.
+Loop script forever. Requires 1 parameter, the function to run.
+TIP: Forever loops will always yield, but the yielding can be delayed by adding repeat loops inside the forever loop.
 
 Example:
 ```
-getSprite(mySprite).run(forever, function(){rotate_right(1)});
+forever(function(){getSprite(mySprite).run(function(){
+rotate_right(1);
+})});
 // rotate 1 degree continuously
-
-getSprite(mySprite).run(forever, function(){
-repeat(20, function(){rotate_right(1/20)})
-});
-// rotate 1 degree continuously, but only yield every 20 frames - forever loops only yield after scripts have run
-// rotates 1/20 to prevent rotating 20 times faster
 ```
 
 ### Global Values
