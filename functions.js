@@ -57,4 +57,10 @@ function change_size(size){
   setSize(spriteData.size + size);
 };
 
+function show(){
+  spriteData.show = true;
+};
 
+function hide(){
+  spriteData.hide = false;
+};
