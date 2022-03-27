@@ -47,6 +47,19 @@ function point_in_direction(dir){
  function point_towards_mouse(){
   point_in_direction(getDirection(spriteData.x, spriteData.y, globalValues.mouseX, globalValues.mouseY));
  };
+
+function setCostume(src){
+    spriteID.src = src;
+};
+
+function setSize(size){
+  spriteData.size = size;
+};
+
+function changeSize(size){
+  setSize(spriteData.size + size);
+};
+
 function initSprite(spriteID, data){
     updateSprite(spriteID, data);
     setTimeout(function(){initSprite(spriteID, data);}, 10);
