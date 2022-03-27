@@ -87,8 +87,21 @@ function pause(seconds){
   while(new Date()-startTime < seconds*1000){}
 };
 
+function yield(){
+  instant = false;
+};
+
 function repeat(n, script, params){
- for(i = 0; i < n; i++){
-  value = script(params);
- };
+    instant = true;
+    if(n>0){
+        script(params);
+    };
+    for(i = 0; i < n-1; i++){
+         if(instant == false){
+             setTimeout.bind(script, params);
+             setTimeout(function(){script(params)}, 10*i);
+         }else{
+            script(params);
+         };
+    };
 };
