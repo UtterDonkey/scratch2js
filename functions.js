@@ -64,3 +64,12 @@ function show(){
 function hide(){
   spriteData.hide = false;
 };
+
+function go_to_front(){
+  spriteData.layer = getMaxLayer()+1
+};
+
+function go_to_back(){
+  moveSpritesUp();
+  spriteData.layer = 0;
+};
