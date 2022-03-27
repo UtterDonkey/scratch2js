@@ -86,13 +86,14 @@ function go_backward(layers){
   spriteData.layer = spriteData.layer - layers;
 };
 
-function pause(seconds){
-  startTime = new Date();
-  while(new Date()-startTime < seconds*1000){}
+wait = (waitTime) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, waitTime);
+  });
 };
 
-function yield(){
-  instant = false;
+async function pause(seconds){
+await wait(seconds*1000)
 };
 
 function repeat(n, callback, animate){
