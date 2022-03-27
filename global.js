@@ -23,7 +23,7 @@ function getMaxLayer(){
     return max;
 };
 
-function getSpritesUp(){
+function moveSpritesUp(){
     const temp = sprites;
     for(i = 0; i < temp.length; i++){
         temp[i].layer = temp[i].layer+1;
