@@ -145,7 +145,7 @@ getSprite(mySprite).run(forever, function(){
 repeat(20, function(){rotate_right(1/20)})
 });
 // rotate 1 degree continuously, but only yield every 20 frames - forever loops only yield after scripts have run
-// rotates 1/20 to prevent rotating 20 times fatser
+// rotates 1/20 to prevent rotating 20 times faster
 ```
 
 ### Global Values
