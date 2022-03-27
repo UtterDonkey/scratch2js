@@ -82,8 +82,13 @@ function go_backward(layers){
   spriteData.layer = spriteData.layer - layers;
 };
 
+function pause(seconds){
+  startTime = new Date();
+  while(new Date()-startTime < seconds*1000){}
+};
+
 function repeat(n, script, params){
  for(i = 0; i < n; i++){
-  script(params); 
+  value = script(params);
  };
 };
