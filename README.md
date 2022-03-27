@@ -64,6 +64,14 @@ Set/change X/Y position.
 #### `go_to`
 Requires 2 parameters, first for X, second for Y. Sets sprite's Position.
 
+#### `go_to_mouse`
+Moves sprite to mouse pointer.
+
+Example:
+```
+getSprite(mySprite).run(forever, go_to_mouse);
+```
+
 #### `rotate_left`, `rotate_right`
 Rotate left/right `n` degrees.
 
@@ -131,6 +139,23 @@ repeat(90, function(){
 });
 
 // rotate 180 degrees over 90 frames
+```
+
+#### `forever`
+Loop script forever. Always Yields.
+
+Example:
+```
+getSprite(mySprite).run(forever, function(){rotate_right(1)});
+// rotate 1 degree continuously
+
+getSprite(mySprite).run(forever, function(){
+repeat(20, function(){rotate_right(1/20)})
+});
+// rotate 1 degree continuously, but only yield every 20 frames - forever loop only yield after scripts have run
+// rotates 1/20 to prevent rotating 20 times fatser
+```
+
 ### Global Values
 
 Global values can be accessed from the `globalValues` object.
