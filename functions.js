@@ -105,3 +105,9 @@ function repeat(n, script, params){
          };
     };
 };
+
+
+function forever(script, params){
+  setTimeout.bind(script, params);
+  setTimeout(function(){script(params); forever(script, params);})
+};
