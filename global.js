@@ -1,8 +1,8 @@
 const globalValues = {}
 
 document.body.addEventListener('mousemove', function(e){
-    let x = e.screenX - (window.screen.width/2);
-    let y = (window.screen.height/2) - e.screenY;
+    let x = e.clientX - (window.screen.width/2);
+    let y = (window.screen.height/2) - e.clientY;
     globalValues.mouseX = x;
     globalValues.mouseY = y;
   
