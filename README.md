@@ -105,6 +105,9 @@ Move forward/backward `n` layers.
 #### `go_to_front`, `go_to_back`
 Go infront of/behind all other sprites.
 
+#### `set_opacity`, `change_opacity`
+Value from 0-100. Sets/changes opacity of sprite.
+
 #### `await pause`
 Pause current thread for `n` seconds.
 
