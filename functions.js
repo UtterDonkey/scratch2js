@@ -96,7 +96,8 @@ async function pause(seconds){
 await wait(seconds*1000)
 };
 
-function repeat(n, callback, animate){
+
+function repeat(n, callback, animate, callback2){
     for(i = 0; i < n; i++){
             if(animate){
               setTimeout(function(){callback()}, 10*i);
@@ -104,6 +105,13 @@ function repeat(n, callback, animate){
                 callback();
             };
     };
+    if(callback2){
+    if(animate){
+      setTimeout(function(){callback2()}, 10*(n+1))
+    }else{
+      callback2()
+    }
+  }
 };
 
 function forever(callback){
