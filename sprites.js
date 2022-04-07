@@ -9,6 +9,7 @@ function updateSprite(spriteID, data){
     spriteID.style.top = y - (spriteID.height/2);
     spriteID.style.display = data.show ? '' : 'none';
     spriteID.style.transform = `rotate(${data.direction-90}deg) scale(${data.size/100})`;
+    spriteID.opacity = data.opacity/100
 };
 
 function initSprite(spriteID, data){
@@ -31,6 +32,7 @@ function createSprite(){
   sprite.size = 100;
   sprite.layer = getMaxLayer()+1;
   sprite.costume = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/7e24c99c1b853e52f8e7f9004416fa34.png/get';
+  sprite.opacity = 100
   sprite.run = function(script, param){
     this.spriteData = this;
     spriteData = this.spriteData;
