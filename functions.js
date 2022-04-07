@@ -86,6 +86,14 @@ function go_backward(layers){
   spriteData.layer = spriteData.layer - layers;
 };
 
+function set_opacity(opacity){
+  spriteData.opacity = opacity;
+};
+
+function change_opacity(opacity){
+  spriteData.opacity = spriteData.opacity + opacity;
+};
+
 wait = (waitTime) => {
   return new Promise((resolve) => {
     setTimeout(resolve, waitTime);
