@@ -112,7 +112,7 @@ Pause current thread for `n` seconds.
 Loops can be used for any script and are not run from `spriteObject.run`.
 
 #### `repeat`
-Loop script `n` times. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, boolean, for whether or not to animate the frames.
+Loop script `n` times. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, boolean, for whether or not to animate the frames. Has a fourth optional parameter, function, a callback to be run 1 frame after repeat loop is scheduled to end.
 
 Example:
 ```
