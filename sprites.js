@@ -9,7 +9,7 @@ function updateSprite(spriteID, data){
     spriteID.style.top = y - (spriteID.height/2);
     spriteID.style.display = data.show ? '' : 'none';
     spriteID.style.transform = `rotate(${data.direction-90}deg) scale(${data.size/100})`;
-    spriteID.opacity = data.opacity/100
+    spriteID.style.opacity = data.opacity/100
 };
 
 function initSprite(spriteID, data){
