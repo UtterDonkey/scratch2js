@@ -58,7 +58,7 @@ function set_size(size){
 };
 
 function change_size(size){
-  setSize(spriteData.size + size);
+  set_size(spriteData.size + size);
 };
 
 function show(){
