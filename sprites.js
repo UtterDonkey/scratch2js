@@ -17,7 +17,7 @@ function initSprite(spriteID, data){
     data.renderProcess = setTimeout(function(){initSprite(spriteID, data);}, 10);
 };
 
-function createSprite(){
+function createSprite(image){
   sprites.push({});
   id = sprites.length - 1;
   element = document.createElement('img');
@@ -31,7 +31,7 @@ function createSprite(){
   sprite.show = true;
   sprite.size = 100;
   sprite.layer = getMaxLayer()+1;
-  sprite.costume = 'https://cdn.assets.scratch.mit.edu/internalapi/asset/7e24c99c1b853e52f8e7f9004416fa34.png/get';
+  sprite.costume = image;
   sprite.opacity = 100;
   sprite.run = function(script, param){
     this.spriteData = this;
