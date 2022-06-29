@@ -124,5 +124,5 @@ function repeat(n, callback, animate, callback2){
 
 function forever(callback){
     callback();
-    setTimeout(function(){forever(callback);}, (1/globalValues.CPS).FPS)
+    setTimeout(function(){forever(callback);}, (1/globalValues.CPS))
 }
