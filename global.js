@@ -1,11 +1,12 @@
-const globalValues = {}
+const globalValues = {};
+globalValues.FPS = 60;
 window.addEventListener('load', function(){
     document.body.addEventListener('mousemove', function(e){
         let x = e.clientX - (window.screen.width/2);
         let y = (window.screen.height/2) - e.clientY;
         globalValues.mouseX = x;
         globalValues.mouseY = y;
-  
+        
     });
 });
 
