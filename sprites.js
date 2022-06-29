@@ -3,12 +3,12 @@ const sprites = []
 function updateSprite(spriteID, data){
     spriteID.src = data.costume;
     spriteID.style.zIndex = data.layer;
-    let x = data.x + (window.screen.width/2);
-    let y = -data.y + (window.screen.height/2);
-    spriteID.style.left = x - (spriteID.width/2);
-    spriteID.style.top = y - (spriteID.height/2);
+    let x = data.x + (window.innerWidth/2);
+    let y = -data.y + (window.innerHeight/2);
+    spriteID.style.left = x /* - (spriteID.width/2); */
+    spriteID.style.top = y /* - (spriteID.height/2); */
     spriteID.style.display = data.show ? '' : 'none';
-    spriteID.style.transform = `rotate(${data.direction-90}deg) scale(${data.size/100})`;
+    spriteID.style.transform = `rotate(${data.direction-90}deg) scale(${data.size/100}) translate(-50%, -50%)`;
     spriteID.style.opacity = data.opacity/100;
 };
 
