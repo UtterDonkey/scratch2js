@@ -115,7 +115,7 @@ function repeat(n, callback, animate, callback2){
     };
     if(callback2){
     if(animate){
-      setTimeout(function(){callback2()}, 10*(n+1))
+      setTimeout(function(){callback2()}, globalValues.FPS*(n+1))
     }else{
       callback2()
     }
@@ -124,5 +124,5 @@ function repeat(n, callback, animate, callback2){
 
 function forever(callback){
     callback();
-    setTimeout(function(){forever(callback);}, 10)
+    setTimeout(function(){forever(callback);}, globalValues.FPS)
 }
