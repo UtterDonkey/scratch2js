@@ -1,6 +1,6 @@
 const globalValues = {};
 globalValues.FPS = 60;
-globslValues.CPS = 100;
+globalValues.CPS = 100;
 window.addEventListener('load', function(){
     document.body.addEventListener('mousemove', function(e){
         let x = e.clientX - (window.screen.width/2);
