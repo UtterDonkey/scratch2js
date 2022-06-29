@@ -14,7 +14,7 @@ function updateSprite(spriteID, data){
 
 function initSprite(spriteID, data){
     updateSprite(spriteID, data);
-    data.renderProcess = setTimeout(function(){initSprite(spriteID, data);}, 10);
+    data.renderProcess = setTimeout(function(){initSprite(spriteID, data);}, 1000/globalValues.FPS);
 };
 
 function createSprite(image){
