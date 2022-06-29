@@ -115,7 +115,7 @@ function repeat(n, callback, animate, callback2){
     };
     if(callback2){
     if(animate){
-      setTimeout(function(){callback2()}, (1/globalValues.CPS)*(n+1))
+      setTimeout(function(){callback2()}, (1000/globalValues.CPS)*(n+1))
     }else{
       callback2()
     }
@@ -124,5 +124,5 @@ function repeat(n, callback, animate, callback2){
 
 function forever(callback){
     callback();
-    setTimeout(function(){forever(callback);}, (1/globalValues.CPS))
+    setTimeout(function(){forever(callback);}, (1000/globalValues.CPS))
 }
