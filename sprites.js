@@ -1,7 +1,9 @@
 const sprites = []
 
 function updateSprite(spriteID, data){
-    spriteID.src = data.costume;
+    try{
+        spriteID.src = data.costume;
+    }catch(e){}
     spriteID.style.zIndex = data.layer;
     let x = data.x + (window.innerWidth/2);
     let y = -data.y + (window.innerHeight/2);
