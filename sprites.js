@@ -3,7 +3,7 @@ const sprites = []
 function updateSprite(spriteID, data){
     try{
         spriteID.src = data.costume;
-    }catch(e){}
+    }catch(e){};
     spriteID.style.zIndex = data.layer;
     let x = data.x + (window.innerWidth/2);
     let y = -data.y + (window.innerHeight/2);
