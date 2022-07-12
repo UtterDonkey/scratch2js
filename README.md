@@ -13,6 +13,9 @@ Example:
 mySprite = createSprite();
 spriteObject = getSprite(mySprite);
 ```
+#### Remove Demo Sprite
+
+`demo.js` includes a function to remove the demo sprite. Using `removeDemoSprite()` will delete the demo sprite element, clear it's render process, and delete the variable `demoSprite`
 
 ### Executing Scripts
 
