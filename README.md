@@ -158,6 +158,12 @@ Global values can be accessed from the `globalValues` object.
 #### `mouseX`, `mouseY`
 Returns mouse X and Y position.
 
+#### `FPS`
+How many times per second the sprite's element should be updated.
+
+#### `CPS`
+How many script cycles should be run per second (applies to loops only).
+NOTE: A `repeat` loop's CPS cannot be changed after execution has begun.
 
 ### Sprite Data
 
