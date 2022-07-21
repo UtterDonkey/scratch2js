@@ -1,11 +1,13 @@
 
 
 function updateDirection(){
-spriteData.direction = spriteData.direction%360;
+  spriteData.direction = spriteData.direction%360;
+  spriteData['3d'].rotateX = spriteData['3d'].rotateX%360;
+  spriteData['3d'].rotateY = spriteData['3d'].rotateY%360;
 };
 function move_steps(steps){
-change_x(Math.sin(spriteData.direction - 90));
-change_y(Math.cos(spriteData.direction - 90));
+  change_x(Math.sin(spriteData.direction - 90));
+  change_y(Math.cos(spriteData.direction - 90));
 };
 
 function set_x(x){
