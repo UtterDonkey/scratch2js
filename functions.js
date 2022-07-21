@@ -37,14 +37,41 @@ function rotate_left(deg){
   point_in_direction(spriteData.direction - deg);
 };
 
+ function rotate_x_left(deg){
+   set_x_rotation(spriteData['3d'].rotateX - deg);
+ };
+
+ function rotate_y_left(deg){
+   set_y_rotation(spriteData['3d'].rotateY - deg);
+ };
+
 function rotate_right(deg){
   point_in_direction(spriteData.direction + deg);
 };
 
-function point_in_direction(dir){
+ function rotate_x_right(deg){
+   set_x_rotation(spriteData['3d'].rotateX + deg);
+ };
+
+ function rotate_y_right(deg){
+   set_y_rotation(spriteData['3d'].rotateY + deg);
+ };
+
+ function point_in_direction(dir){
   spriteData.direction = dir;
   updateDirection();
-};
+ };
+
+ function set_x_rotation(dir){
+   spriteData['3d'].rotateX = dir;
+   updateDirection();
+ };
+
+ function set_y_rotation(dir){
+   spriteData['3d'].rotateY = dir;
+   updateDirection();
+ };
+
  function point_towards_mouse(){
   point_in_direction(getDirection(spriteData.x, spriteData.y, globalValues.mouseX, globalValues.mouseY));
  };
