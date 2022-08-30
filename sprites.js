@@ -1,7 +1,7 @@
 const sprites = []
 
 function updateSprite(spriteID, data){
-    spriteID.src = data.costume;
+    spriteID.src = data.costume == null ? spriteID.src : data.costume;
     spriteID.style.zIndex = data.layer;
     let x = data.x + (window.innerWidth/2);
     let y = -data.y + (window.innerHeight/2);
@@ -28,7 +28,7 @@ function createSprite(image){
      document.body.appendChild(element); 
   };
   sprite = sprites[id];
-  sprite.costume = assignElement ? '' : image;
+  sprite.costume = assignElement ? null : image;
   sprite.direction = 90;
   sprite.x = 0;
   sprite.y = 0;
