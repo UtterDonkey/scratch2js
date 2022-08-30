@@ -5,6 +5,7 @@ function updateSprite(spriteID, data){
     spriteID.style.zIndex = data.layer;
     let x = data.x + (window.innerWidth/2);
     let y = -data.y + (window.innerHeight/2);
+    spriteID.style.postion = 'fixed';
     spriteID.style.left = x - (spriteID.clientWidth/2);
     spriteID.style.top = y - (spriteID.clientHeight/2);
     spriteID.style.display = data.show ? '' : 'none';
@@ -24,7 +25,6 @@ function createSprite(image){
   if(!assignElement){
      element = document.createElement('img');
      element.id = 'sprite#' + id;
-     element.style.position = 'fixed';
      document.body.appendChild(element); 
   };
   sprite = sprites[id];
