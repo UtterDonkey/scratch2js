@@ -27,8 +27,8 @@ function createSprite(image){
      element.style.position = 'fixed';
      document.body.appendChild(element); 
   };
-  sprite.costume = assignElement ? '' : image;
   sprite = sprites[id];
+  sprite.costume = assignElement ? '' : image;
   sprite.direction = 90;
   sprite.x = 0;
   sprite.y = 0;
