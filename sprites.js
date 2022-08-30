@@ -20,10 +20,14 @@ function initSprite(spriteID, data){
 function createSprite(image){
   sprites.push({});
   id = sprites.length - 1;
-  element = document.createElement('img');
-  element.id = 'sprite#' + id;
-  element.style.position = 'fixed';
-  document.body.appendChild(element);
+  const assignElement = typeof image == 'object';
+  if(!assignElement){
+     element = document.createElement('img');
+     element.id = 'sprite#' + id;
+     element.style.position = 'fixed';
+     document.body.appendChild(element); 
+  };
+  sprite.costume = assignElement ? '' : image;
   sprite = sprites[id];
   sprite.direction = 90;
   sprite.x = 0;
@@ -31,7 +35,6 @@ function createSprite(image){
   sprite.show = true;
   sprite.size = 100;
   sprite.layer = getMaxLayer()+1;
-  sprite.costume = image;
   sprite.opacity = 100;
   sprite['3d'] = {};
   sprite['3d'].rotateX = 90;
@@ -43,7 +46,7 @@ function createSprite(image){
     script(param);
     spriteData = undefined;
   };
-  initSprite(document.getElementById('sprite#' + id), sprite);
+  initSprite(assignElement ? image : document.getElementById('sprite#' + id), sprite);
   return id;
 };
 
