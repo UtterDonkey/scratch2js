@@ -5,7 +5,7 @@ function updateSprite(spriteID, data){
     spriteID.style.zIndex = data.layer;
     let x = data.x + (window.innerWidth/2);
     let y = -data.y + (window.innerHeight/2);
-    spriteID.style.postion = 'fixed';
+    spriteID.style.postion = 'fixed !important';
     spriteID.style.left = x - (spriteID.clientWidth/2);
     spriteID.style.top = y - (spriteID.clientHeight/2);
     spriteID.style.display = data.show ? '' : 'none';
@@ -29,6 +29,7 @@ function createSprite(image){
   };
   sprite = sprites[id];
   sprite.costume = assignElement ? null : image;
+  sprite.ref = assignElement ? image : document.getElementById('sprite#' + id)
   sprite.direction = 90;
   sprite.x = 0;
   sprite.y = 0;
@@ -39,19 +40,25 @@ function createSprite(image){
   sprite['3d'] = {};
   sprite['3d'].rotateX = 90;
   sprite['3d'].rotateY = 90;
-  sprite.run = function(script, param){
+  sprite.run = function(script, param, param0, param1, param2, param3, param4, param5, param6, param7, param8, param9){
     this.spriteData = this;
     spriteData = this.spriteData;
     spriteData;
-    script(param);
+    script(param, param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
     spriteData = undefined;
   };
-  initSprite(assignElement ? image : document.getElementById('sprite#' + id), sprite);
+  sprite.terminate - function(removeElement){
+    clearTimeout(this.spriteData.renderProcess);
+    if(removeElement) this.spriteData.ref.remove();
+  }
+  initSprite(sprite.ref, sprite);
   return id;
 };
 
 function getSprite(id){
   return sprites[id];
 };
-
+function forceSpriteUpdate(id){
+    updateSprite(getSprite(id).ref, getSprite(id));
+}
 
