@@ -47,7 +47,7 @@ function createSprite(image){
     script(param, param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
     spriteData = undefined;
   };
-  sprite.terminate - function(removeElement){
+  sprite.terminate = function(removeElement){
     clearTimeout(this.spriteData.renderProcess);
     if(removeElement) this.spriteData.ref.remove();
   }
