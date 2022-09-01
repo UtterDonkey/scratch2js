@@ -1,10 +1,12 @@
 const globalValues = {};
 globalValues.FPS = 60;
 globalValues.CPS = 100;
+globalValues.fixedWidth = null;
+globalValues.fixedHieght = null;
 window.addEventListener('load', function(){
     document.body.addEventListener('mousemove', function(e){
-        let x = e.clientX - (window.screen.width/2);
-        let y = (window.screen.height/2) - e.clientY;
+        let x = e.clientX - ((((globalValues.fixedWidth == null ? window.screen.width : globalValues.fixedWidth)/window.innerWidth)*window.screen.width)/2);
+        let y = ((((globalValues.fixedHeight == null ? window.screen.height : globalValues.fixedHeight)/window.innerHeight)*window.screen.height)/2) - e.clientY;
         globalValues.mouseX = x;
         globalValues.mouseY = y;
         
