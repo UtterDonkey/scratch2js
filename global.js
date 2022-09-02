@@ -8,13 +8,13 @@ globalValues.getFixedValue = function(dimension){
         if(globalValues.fixedHeight == null){
             return 1;
         }else{
-            return globalValues.fixedHeight/window.innerHeight;
+            return window.innerHeight/globalValues.fixedHeight;
         }
     }else{
         if(globalValues.fixedWidth == null){
             return 1;
         }else{
-            return globalValues.fixedWidth/window.innerWidth;
+            return window.innerWidth/globalValues.fixedWidth;
         }
     }
 }
