@@ -20,8 +20,8 @@ globalValues.getFixedValue = function(dimension){
 }
 window.addEventListener('load', function(){
     document.body.addEventListener('mousemove', function(e){
-        let x = (e.clientX - (window.screen.width/2));
-        let y = ((window.screen.height/2) - e.clientY);
+        let x = (e.clientX - (window.innerWidth/2));
+        let y = ((window.innerHeight/2) - e.clientY);
         globalValues.mouseX = x*globalValues.getFixedValue('width');
         globalValues.mouseY = y*globalValues.getFixedValue('height');
         
