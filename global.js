@@ -3,7 +3,7 @@ globalValues.FPS = 60;
 globalValues.CPS = 100;
 globalValues.fixedWidth = null;
 globalValues.fixedHeight = null;
-glovalValues.getFixedValue = function(dimension){
+globalValues.getFixedValue = function(dimension){
     if(dimension == 'height'){
         if(globalValues.fixedHeight == null){
             return 1;
