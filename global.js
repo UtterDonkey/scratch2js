@@ -28,12 +28,14 @@ window.addEventListener('load', function(){
         
     });
     document.body.addEventListener('touchstart', function(e){
-        let x = (e.clientX - (window.innerWidth/2));
-        let y = ((window.innerHeight/2) - e.clientY);
-        let pushData = {};
-        pushData.mouseX = x*globalValues.getFixedValue('width');
-        pushData.mouseY = y*globalValues.getFixedValue('height');
-        globalValues.touches.push(pushData);
+        for(let i=0; i<touches.length; i++){
+            let x = (e.touches[i].clientX - (window.innerWidth/2));
+            let y = ((window.innerHeight/2) - e.touches[i].clientY);
+            let pushData = {};
+            pushData.mouseX = x*globalValues.getFixedValue('width');
+            pushData.mouseY = y*globalValues.getFixedValue('height');
+            globalValues.touches.push(pushData);
+        }
     });
     document.body.addEventListener('touchend', function(e){
         globalValues.touches = [];
