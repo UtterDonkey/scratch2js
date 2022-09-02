@@ -28,7 +28,7 @@ window.addEventListener('load', function(){
         
     });
     document.body.addEventListener('touchstart', function(e){
-        for(let i=0; i<touches.length; i++){
+        for(let i=0; i<e.touches.length; i++){
             let x = (e.touches[i].clientX - (window.innerWidth/2));
             let y = ((window.innerHeight/2) - e.touches[i].clientY);
             let pushData = {};
