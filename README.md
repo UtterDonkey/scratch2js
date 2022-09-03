@@ -6,11 +6,11 @@ Convert Scratch Projects To JavaScript
 
 ### Creating Sprites
 
-To create a sprite, use <code>createSprite()</code>. It will return an id that can be used to run scripts. To run scripts or read data from a sprite, use <code>getSprite()</code>. It will return the sprite object. It requires 1 parameter which is the id returned from the <code>createSprite()</code> function.
+To create a sprite, use <code>createSprite()</code>. It requires 1 parameter which is either an element to assign it to or an image URL to set as the costume. It will return an id that can be used to run scripts. To run scripts or read data from a sprite, use <code>getSprite()</code>. It will return the sprite object. It requires 1 parameter which is the id returned from the <code>createSprite()</code> function.
 
 Example:
 ```
-mySprite = createSprite();
+mySprite = createSprite(https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png);
 spriteObject = getSprite(mySprite);
 ```
 #### Remove Demo Sprite
@@ -19,11 +19,14 @@ spriteObject = getSprite(mySprite);
 
 ### Executing Scripts
 
-To execute a script, use the `run()` function in a sprite object. It requires 2 parameters, the first is the name of the script, the second is the parameter. If the script requires multiple parameters or to run multiple scripts, use a function.
+To execute a script, use the `run()` function in a sprite object. It requires 2 parameters, the first is the name of the script, the second is the parameter. The `run` function supports up to 11 parameters. If the script requires more than 11 parameters or needs to run multiple scripts, use a function.
 
 Example:
 ```
 spriteObject.run(function(){go_to(0, 0)});
+// will centre sprite
+
+spriteObject.run(go_to, 0, 0);
 // will centre sprite
 
 spriteObject.run(function(){
@@ -40,6 +43,19 @@ spriteObject.run(hide);
 spriteObject.run(go_forward, 2);
 // will move the sprite forward 2 layers
 
+```
+
+### Deleting Sprites
+
+To execute a script, use the `terminate()` function in a sprite object. It requires 1 parameter, this parameter is a boolean telling the function whether or not to delete the element from the DOM as well.
+
+Example:
+```
+spriteObject.terminate()
+// will terminate the sprite process but the element will still exist, essentially "freezing" the sprite.
+
+spriteObject.terminate(true)
+//will terminate sprite process and delete element
 ```
 
 ### Scripts
@@ -70,6 +86,12 @@ getSprite(mySprite).run(forever, go_to_mouse);
 #### `rotate_left`, `rotate_right`
 Rotate left/right `n` degrees.
 
+#### `rotate_x_left`, `rotate_x_right`
+Rotate X axis left/right `n` degrees.
+
+#### `rotate_y_left`, `rotate_y_right`
+Rotate Y axis left/right `n` degrees.
+
 Example:
 ```
 spriteObject.run(rotate_right, 45);
@@ -78,6 +100,12 @@ spriteObject.run(rotate_right, 45);
 
 #### `point_in_direction`
 Set sprite's direction.
+
+#### `set_x_rotation`
+Set sprite's X rotation.
+
+#### `set_y_rotation`
+Set sprite's Y rotation.
 
 #### `point_towards_mouse`
 Point sprite towards mouse pointer.
@@ -96,11 +124,14 @@ spriteObject.run(function(){point_in_direction(getDirection(spriteData.x, sprite
 NOTE: Behaviour may change in the future.
 Set sprite's costume (display image) to url.
 
-#### `set_size`
-Set sprite's size to `n%`.
+#### `set_size`, `change_size`
+Sets/changes sprite's size to `n%`.
 
-#### `change_size`
-Change sprite's size by `n%`.
+#### `set_height`, `change_height`
+Sets/changes sprite'sheight to `n%`.
+
+#### `set_width`,  `change_width`
+Sets/changes sprite's width to `n%`.
 
 #### `go_forward`, `go_backward`
 Move forward/backward `n` layers.
@@ -165,6 +196,8 @@ How many times per second the sprite's element should be updated.
 How many script cycles should be run per second (applies to loops only).
 NOTE: A `repeat` loop's CPS cannot be changed after execution has begun.
 
+#### `touches`
+Returns an array of objects. Each object has a `mouseX` and `mouseY` key. This is used for when a user on a mobile device taps in multiple places at once.
 ### Sprite Data
 
 The sprite's object can be accessed through `spriteData` in a function or script.
