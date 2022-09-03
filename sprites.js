@@ -9,7 +9,7 @@ function updateSprite(spriteID, data){
     spriteID.style.left = x - (spriteID.clientWidth/2);
     spriteID.style.top = y - (spriteID.clientHeight/2);
     spriteID.style.display = data.show ? '' : 'none';
-    spriteID.style.transform = `rotate(${data.direction-90}deg) rotateX(${data['3d'].rotateY-90}deg) rotateY(${data['3d'].rotateX-90}deg) scale(${(data.size/100)})`;
+    spriteID.style.transform = `rotate(${data.direction-90}deg) rotateX(${data['3d'].rotateY-90}deg) rotateY(${data['3d'].rotateX-90}deg) scale(${(data.size/100)}) scaleX(${(data.width/100)}) scaleY(${(data.height/100)})`;
     spriteID.style.opacity = data.opacity/100;
 };
 
@@ -35,6 +35,8 @@ function createSprite(image){
   sprite.y = 0;
   sprite.show = true;
   sprite.size = 100;
+  sprite.height = 100;
+  sprite.width = 100;
   sprite.layer = getMaxLayer()+1;
   sprite.opacity = 100;
   sprite['3d'] = {};
