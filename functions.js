@@ -90,6 +90,22 @@ function change_size(size){
   set_size(spriteData.size + size);
 };
 
+function set_height(height){
+  spriteData.height = height;
+};
+
+function change_height(height){
+  set_height(spriteData.height + height);
+};
+
+function set_width(width){
+  spriteData.width = width;
+};
+
+function change_width(width){
+  set_width(spriteData.width + width);
+};
+
 function show(){
   spriteData.show = true;
 };
