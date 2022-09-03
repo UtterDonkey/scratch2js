@@ -186,6 +186,8 @@ rotate_right(1);
 
 Global values can be accessed from the `globalValues` object.
 
+#### `fixedHeight`, `fixedWidth`
+Simulates the device screen being 'n' pixels. Default: `null`
 #### `mouseX`, `mouseY`
 Returns mouse X and Y position.
 
