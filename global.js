@@ -40,7 +40,7 @@ window.addEventListener('load', function(){
         }
     });
     document.body.addEventListener('touchend', function(e){
-        globalValues.touchTimeout = setTimeout(function(){globalValues.touches = [];}, 125);
+        globalValues.touchTimeout = setTimeout(function(){globalValues.touches = [];}, 300);
     });
 });
 
