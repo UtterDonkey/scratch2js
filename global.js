@@ -4,6 +4,7 @@ globalValues.CPS = 100;
 globalValues.touches = [];
 globalValues.fixedWidth = null;
 globalValues.fixedHeight = null;
+globalValues.touchTimeout = 0;
 globalValues.getFixedValue = function(dimension){
     if(dimension == 'height'){
         if(globalValues.fixedHeight == null){
@@ -28,6 +29,7 @@ window.addEventListener('load', function(){
         
     });
     document.body.addEventListener('touchstart', function(e){
+        clearTimeout(globalValues.touchTimeout);
         for(let i=0; i<e.touches.length; i++){
             let x = (e.touches[i].clientX - (window.innerWidth/2));
             let y = ((window.innerHeight/2) - e.touches[i].clientY);
@@ -38,7 +40,7 @@ window.addEventListener('load', function(){
         }
     });
     document.body.addEventListener('touchend', function(e){
-        globalValues.touches = [];
+        globalValues.touchTimeout = setTimeout(function(){globalValues.touches = [];}, 125);
     });
 });
 
