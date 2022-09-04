@@ -78,6 +78,9 @@ function rotate_right(deg){
   point_in_direction(getDirection(spriteData.x, spriteData.y, globalValues.mouseX, globalValues.mouseY));
  };
 
+function define_camera_distance(cameraDistance){
+  spriteData['3d'].cameraDistance = cameraDistance;
+};
 function set_costume(src){
     spriteData.costume = src;
 };
