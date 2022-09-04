@@ -4,6 +4,7 @@ function updateDirection(){
   spriteData.direction = spriteData.direction%360;
   spriteData['3d'].rotateX = spriteData['3d'].rotateX%360;
   spriteData['3d'].rotateY = spriteData['3d'].rotateY%360;
+  if(spriteData['3d'].rotateX != 90 || spriteData['3d'].rotateY != 90) spriteData['3d'].isEnabled = true;
 };
 function move_steps(steps){
   change_x(Math.sin(spriteData.direction - 90));
