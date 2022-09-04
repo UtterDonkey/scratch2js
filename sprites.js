@@ -44,7 +44,7 @@ function createSprite(image){
   sprite['3d'].rotateX = 90;
   sprite['3d'].rotateY = 90;
   sprite['3d'].isEnabled = false;
-  sprite['3d'].cameraDistance = 800
+  sprite['3d'].cameraDistance = 0;
   sprite.run = function(script, param, param0, param1, param2, param3, param4, param5, param6, param7, param8, param9){
     this.spriteData = this;
     spriteData = this.spriteData;
