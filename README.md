@@ -83,13 +83,13 @@ Example:
 getSprite(mySprite).run(forever, go_to_mouse);
 ```
 
-#### `rotate_left`, `rotate_right`
+#### 🧊`rotate_left`, `rotate_right`
 Rotate left/right `n` degrees.
 
-#### `rotate_x_left`, `rotate_x_right`
+#### 🧊`rotate_x_left`, `rotate_x_right`
 Rotate X axis left/right `n` degrees.
 
-#### `rotate_y_left`, `rotate_y_right`
+#### 🧊`rotate_y_left`, `rotate_y_right`
 Rotate Y axis left/right `n` degrees.
 
 Example:
@@ -101,10 +101,10 @@ spriteObject.run(rotate_right, 45);
 #### `point_in_direction`
 Set sprite's direction.
 
-#### `set_x_rotation`
+#### 🧊`set_x_rotation`
 Set sprite's X rotation.
 
-#### `set_y_rotation`
+#### 🧊`set_y_rotation`
 Set sprite's Y rotation.
 
 #### `point_towards_mouse`
@@ -120,6 +120,8 @@ spriteObject.run(function(){point_in_direction(getDirection(spriteData.x, sprite
 // will point towards centre
 ```
 
+#### 🧊`define_camera_distance`
+Usually a value between 0 and 100. Defines the camera's perspective when using 3D effects.
 #### `set_costume`
 NOTE: Behaviour may change in the future.
 Set sprite's costume (display image) to url.
