@@ -9,7 +9,7 @@ function updateSprite(spriteID, data){
     spriteID.style.left = x - (spriteID.clientWidth/2);
     spriteID.style.top = y - (spriteID.clientHeight/2);
     spriteID.style.display = data.show ? '' : 'none';
-    spriteID.style.transform = `${data['3d'].isEnabled ? `perspective(${data['3d'].cameraDistance/10}px) rotateX(${data['3d'].rotateY-90}deg) rotateY(${data['3d'].rotateX-90}deg)` : ''} rotate(${data.direction-90}deg) scale(${(data.size/100)}) scaleX(${(data.width/100)}) scaleY(${(data.height/100)})`;
+    spriteID.style.transform = `${data['3d'].isEnabled ? `perspective(${data['3d'].cameraDistance*10}px) rotateX(${data['3d'].rotateY-90}deg) rotateY(${data['3d'].rotateX-90}deg)` : ''} rotate(${data.direction-90}deg) scale(${(data.size/100)}) scaleX(${(data.width/100)}) scaleY(${(data.height/100)})`;
     spriteID.style.opacity = data.opacity/100;
 };
 
