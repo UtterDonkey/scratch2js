@@ -58,6 +58,10 @@ spriteObject.terminate(true)
 //will terminate sprite process and delete element
 ```
 
+#### Forcing Sprite Updates
+
+`forceSpriteUpdate()` requires 1 parameter - the id of the sprite to update. It is the same id that is used in `getSprite()`. This script will immediately update the sprite without waiting until the next frame;
+
 ### Scripts
 
 #### `move_steps`
@@ -182,6 +186,17 @@ forever(function(){getSprite(mySprite).run(function(){
 rotate_right(1);
 })});
 // rotate 1 degree continuously
+```
+
+### Sprite Values
+
+#### `id`
+Will return the sprite's id.
+eg.
+```
+spriteObject.id
+// will return ID
+spriteObject == getSprite(spriteObject.id) // true
 ```
 
 ### Global Values
