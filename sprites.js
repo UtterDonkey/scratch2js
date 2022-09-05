@@ -6,8 +6,8 @@ function updateSprite(spriteID, data){
     let x = (data.x*globalValues.getFixedValue('width')) + (window.innerWidth/2);
     let y = -(data.y*globalValues.getFixedValue('height')) + (window.innerHeight/2);
     spriteID.style.position = 'fixed';
-    spriteID.style.left = x - (spriteID.clientWidth/2);
-    spriteID.style.top = y - (spriteID.clientHeight/2);
+    spriteID.style.left = x - (spriteID.clientWidth/2) + 'px';
+    spriteID.style.top = y - (spriteID.clientHeight/2) + 'px';
     spriteID.style.display = data.show ? '' : 'none';
     spriteID.style.transform = `${data['3d'].isEnabled ? `perspective(${data['3d'].cameraDistance*10}px) rotateX(${data['3d'].rotateY-90}deg) rotateY(${data['3d'].rotateX-90}deg)` : ''} rotate(${data.direction-90}deg) scale(${(data.size/100)}) scaleX(${(data.width/100)}) scaleY(${(data.height/100)})`;
     spriteID.style.opacity = data.opacity/100;
@@ -53,12 +53,12 @@ function createSprite(image){
     spriteData = undefined;
   };
   sprite.terminate = function(removeElement){
-    clearTimeout(this.spriteData.renderProcess);
-    sprites.splice(this.spriteData.id, 0);
-    if(removeElement) this.spriteData.ref.remove();
+    clearTimeout(this.renderProcess);
+    sprites.splice(this.id, 0);
+    if(removeElement) this.ref.remove();
   }
   sprite.freeze = function(){
-    clearTimeout(this.spriteData.renderProcess);
+    clearTimeout(this.renderProcess);
   }
   initSprite(sprite.ref, sprite);
   return id;
