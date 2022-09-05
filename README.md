@@ -47,16 +47,33 @@ spriteObject.run(go_forward, 2);
 
 ### Deleting Sprites
 
-To execute a script, use the `terminate()` function in a sprite object. It requires 1 parameter, this parameter is a boolean telling the function whether or not to delete the element from the DOM as well.
+#### `terminate`
+To delete a sprite, use the `terminate()` function in a sprite object. It ends the sprite's render process and removes it from the sprite index. It requires 1 parameter, this parameter is a boolean telling the function whether or not to delete the element from the DOM as well.
 
 Example:
 ```
 spriteObject.terminate()
-// will terminate the sprite process but the element will still exist, essentially "freezing" the sprite.
+// will terminate the sprite process but the element will still exist.
 
 spriteObject.terminate(true)
 //will terminate sprite process and delete element
 ```
+
+#### `freeze`
+To freeze a sprite, use the `freeze()` function in a sprite object. It ends the sprite's render process but does not remove it from the sprite index. After freezing, the only way to update it is eaither to terminate and recreate the sprite, or use `forceSpriteUpdate()`.
+
+Example:
+```
+spriteObject.freeze();
+// will terminate the render process but the sprite will still remain indexed, allowing for forceSpriteUpdate() to work.
+
+// bring the sprite back
+const element = spriteObject.ref;
+spriteObject.terminate();
+mySprite = createSprite(element);
+spriteObject = getSprite(mySprite);
+```
+
 
 #### Forcing Sprite Updates
 
