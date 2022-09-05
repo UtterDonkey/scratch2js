@@ -5,7 +5,7 @@ function updateSprite(spriteID, data){
     spriteID.style.zIndex = data.layer;
     let x = (data.x*globalValues.getFixedValue('width')) + (window.innerWidth/2);
     let y = -(data.y*globalValues.getFixedValue('height')) + (window.innerHeight/2);
-    spriteID.style.postion = 'fixed !important';
+    spriteID.style.position = 'fixed !important';
     spriteID.style.left = x - (spriteID.clientWidth/2);
     spriteID.style.top = y - (spriteID.clientHeight/2);
     spriteID.style.display = data.show ? '' : 'none';
