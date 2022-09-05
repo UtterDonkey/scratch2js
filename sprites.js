@@ -5,7 +5,7 @@ function updateSprite(spriteID, data){
     spriteID.style.zIndex = data.layer;
     let x = (data.x*globalValues.getFixedValue('width')) + (window.innerWidth/2);
     let y = -(data.y*globalValues.getFixedValue('height')) + (window.innerHeight/2);
-    spriteID.style.position = 'fixed !important';
+    spriteID.style.position = 'fixed';
     spriteID.style.left = x - (spriteID.clientWidth/2);
     spriteID.style.top = y - (spriteID.clientHeight/2);
     spriteID.style.display = data.show ? '' : 'none';
@@ -54,7 +54,11 @@ function createSprite(image){
   };
   sprite.terminate = function(removeElement){
     clearTimeout(this.spriteData.renderProcess);
+    sprites.splice(this.spriteData.id, 0);
     if(removeElement) this.spriteData.ref.remove();
+  }
+  sprite.freeze = function(){
+    clearTimeout(this.spriteData.renderProcess);
   }
   initSprite(sprite.ref, sprite);
   return id;
