@@ -111,11 +111,11 @@ function change_width(width){
 };
 
 function show(){
-  spriteData.show = true;
+  spriteData.hidden = false;
 };
 
 function hide(){
-  spriteData.show = false;
+  spriteData.hidden = true;
 };
 
 function go_to_front(){
