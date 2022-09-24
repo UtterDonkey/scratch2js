@@ -4,6 +4,19 @@ Convert Scratch Projects To JavaScript
 
 ## Docs
 
+🧪 Experiment
+
+🛠️ Not Fully Implemented
+
+🧊 Initiates 3D Engine
+
+📖 Intended for Read-only
+
+🌟 New Feature
+
+⚠️ Deprecated
+
+
 ### Creating Sprites
 
 To create a sprite, use <code>createSprite()</code>. It requires 1 parameter which is either an element to assign it to or an image URL to set as the costume. It will return an id that can be used to run scripts. To run scripts or read data from a sprite, use <code>getSprite()</code>. It will return the sprite object. It requires 1 parameter which is the id returned from the <code>createSprite()</code> function.
@@ -13,10 +26,10 @@ Example:
 mySprite = createSprite(https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png);
 spriteObject = getSprite(mySprite);
 ```
-#### Remove Demo Sprite
+#### ⚠️ Remove Demo Sprite
 
 `demo.js` includes a function to remove the demo sprite. Using `removeDemoSprite()` will delete the demo sprite element, clear its render process, and delete the variable `demoSprite`
-
+Deprecate - use `getSprite(demoSprite).terminate(true)`
 ### Executing Scripts
 
 To execute a script, use the `run()` function in a sprite object. It requires 2 parameters, the first is the name of the script, the second is the parameter. The `run` function supports up to 11 parameters. If the script requires more than 11 parameters or needs to run multiple scripts, use a function.
@@ -80,16 +93,6 @@ spriteObject = getSprite(mySprite);
 `forceSpriteUpdate()` requires 1 parameter - the id of the sprite to update. It is the same id that is used in `getSprite()`. This script will immediately update the sprite without waiting until the next frame;
 
 ### Scripts
-
-🧪 Experiment
-
-🛠️ Not Fully Implemented
-
-🧊 Initiates 3D Engine
-
-📖 Intended for Read-only
-
-🌟 New Feature
 
 
 #### `move_steps`
