@@ -176,7 +176,7 @@ function repeat(n, callback, animate, callback2){
 };
 
 function doLoop(n, callback, callback2, m){
-      if(m === undefined) m =0;
+      if(m === undefined) m =1;
       if(m > n){
         if(callback2) callback2()
       }else{
