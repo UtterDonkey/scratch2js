@@ -114,17 +114,17 @@ getSprite(mySprite).run(forever, go_to_mouse);
 #### `rotate_left`, `rotate_right`
 Rotate left/right `n` degrees.
 
-#### 🧊`rotate_x_left`, `rotate_x_right`
-Rotate X axis left/right `n` degrees.
-
-#### 🧊`rotate_y_left`, `rotate_y_right`
-Rotate Y axis left/right `n` degrees.
-
 Example:
 ```
 spriteObject.run(rotate_right, 45);
 // will rotate sprite to 135° presuming its direction is 90°
 ```
+
+#### 🧊`rotate_x_left`, `rotate_x_right`
+Rotate X axis left/right `n` degrees.
+
+#### 🧊`rotate_y_left`, `rotate_y_right`
+Rotate Y axis left/right `n` degrees.
 
 #### `point_in_direction`
 Set sprite's direction.
