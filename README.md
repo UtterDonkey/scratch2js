@@ -239,8 +239,16 @@ Will return boolean indicating whether or not the sprite is hidden.
 #### 📖`['3d']`
 Will return sprite's 3D object.
 
+##### 📖`isEnabled`
+Will return boolean indicating whether or not the sprite is running in a 3D context.
+WARNING: Do not change this value, it is automatically set by the engine and is used to save resources when 3D is not needed.
 
-####
+##### `cameraDistance`
+Will return the 3D camera distance.
+
+#### 📖`rotateX`, `rotateY`
+Will return sprite's X/Y rotation.
+
 ### Global Values
 
 Global values can be accessed from the `globalValues` object.
