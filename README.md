@@ -19,7 +19,7 @@ Convert Scratch Projects To JavaScript
 
 ### Creating Sprites
 
-To create a sprite, use <code>createSprite()</code>. It requires 1 parameter which is either an element to assign it to or an image URL to set as the costume. It will return an id that can be used to run scripts. To run scripts or read data from a sprite, use <code>getSprite()</code>. It will return the sprite object. It requires 1 parameter which is the id returned from the <code>createSprite()</code> function.
+To create a sprite, use `createSprite()`. It requires 1 parameter which is either an element to assign it to or an image URL to set as the costume. It will return an id that can be used to run scripts. To run scripts or read data from a sprite, use <code>getSprite()</code>. It will return the sprite object. It requires 1 parameter which is the id returned from the <code>createSprite()</code> function.
 
 Example:
 ```
@@ -100,6 +100,24 @@ spriteObject = getSprite(mySprite);
 `forceSpriteUpdate()` requires 1 parameter - the id of the sprite to update. It is the same id that is used in `getSprite()`. This script will immediately update the sprite without waiting until the next frame;
 
 
+
+### 🛠️ Deployment
+
+You can deploy your scripts on another site/HTML application using 4 different methods.
+
+#### Download Scripts
+
+Download `global.js`, `functions.js` and `sprites.js` then put them in the same folder as the HTML file you're running your script from. Then put the following in your HTML.
+
+```html
+  <script src="global.js"></script>
+  <script src="functions.js"></script>
+  <script src="sprites.js"></script>
+```
+NOTE: Scripts must be out in that order.
+Your code can then then go in another script tag below those.
+
+#### Use Scripts from GitHub
 
 ### Scripts
 
