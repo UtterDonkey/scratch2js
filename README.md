@@ -29,7 +29,9 @@ spriteObject = getSprite(mySprite);
 #### ⚠️ Remove Demo Sprite
 
 `demo.js` includes a function to remove the demo sprite. Using `removeDemoSprite()` will delete the demo sprite element, clear its render process, and delete the variable `demoSprite`
-Deprecate - use `getSprite(demoSprite).terminate(true)`
+
+Deprecated - use `getSprite(demoSprite).terminate(true)` instead.
+
 ### Executing Scripts
 
 To execute a script, use the `run()` function in a sprite object. It requires 2 parameters, the first is the name of the script, the second is the parameter. The `run` function supports up to 11 parameters. If the script requires more than 11 parameters or needs to run multiple scripts, use a function.
