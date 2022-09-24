@@ -83,6 +83,7 @@ spriteObject = getSprite(mySprite);
 
 🧪Experiment
 🧊Initiates 3D Engine
+📖Intended for Read-only
 
 #### `move_steps`
 Move sprite `n` pixels in current direction.
@@ -213,7 +214,7 @@ rotate_right(1);
 
 ### Sprite Values
 
-#### `id`
+#### 📖`id`
 Will return the sprite's id.
 eg.
 ```
@@ -222,6 +223,24 @@ spriteObject.id
 spriteObject == getSprite(spriteObject.id) // true
 ```
 
+#### 📖`ref`
+Will return the element the render process is rendering to.
+
+#### 📖`direction`
+Will return the sprite's direction.
+
+#### `x`, `y`, `size`, `width`, `height`, `layer`, `opacity`
+Will return X/Y/size/width/height/layer/opacity of sprite.
+NOTE: changing these values is not recommended.
+
+#### `hidden`
+Will return boolean indicating whether or not the sprite is hidden.
+
+#### 📖`['3d']`
+Will return sprite's 3D object.
+
+
+####
 ### Global Values
 
 Global values can be accessed from the `globalValues` object.
@@ -238,7 +257,7 @@ How many times per second the sprite's element should be updated.
 How many script cycles should be run per second (applies to loops only).
 NOTE: A `repeat` loop's CPS cannot be changed after execution has begun.
 
-#### `touches`
+#### 📖`touches`
 Returns an array of objects. Each object has a `mouseX` and `mouseY` key. This is used for when a user on a mobile device taps in multiple places at once.
 ### Sprite Data
 
