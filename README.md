@@ -101,7 +101,7 @@ spriteObject = getSprite(mySprite);
 
 
 
-### 🛠️ Deployment
+### Deployment
 
 You can deploy your scripts on another site/HTML application using 4 different methods.
 
@@ -117,7 +117,18 @@ Download `global.js`, `functions.js` and `sprites.js` then put them in the same 
 NOTE: Scripts must be out in that order.
 Your code can then then go in another script tag below those.
 
+
 #### Use Scripts from GitHub
+
+Enter the following in your HTML.
+```html
+  <script src="https://utterdonkey.github.io/scratch2js/global.js"></script>
+  <script src="https://utterdonkey.github.io/scratch2js/functions.js"></script>
+  <script src="https://utterdonkey.github.io/scratch2js/sprites.js"></script>
+```
+NOTE: Scripts must be out in that order.
+Your code can then then go in another script tag below those.
+
 
 ### Scripts
 
