@@ -265,7 +265,7 @@ How many times per second the sprite's element should be updated.
 How many script cycles should be run per second (applies to loops only).
 NOTE: A `repeat` loop's CPS cannot be changed after execution has begun.
 
-#### 📖`touches`
+#### 📖🧪`touches`
 Returns an array of objects. Each object has a `mouseX` and `mouseY` key. This is used for when a user on a mobile device taps in multiple places at once.
 ### Sprite Data
 
