@@ -32,6 +32,8 @@ spriteObject = getSprite(mySprite);
 
 Deprecated - use `getSprite(demoSprite).terminate(true)` instead.
 
+
+
 ### Executing Scripts
 
 To execute a script, use the `run()` function in a sprite object. It requires 2 parameters, the first is the name of the script, the second is the parameter. The `run` function supports up to 11 parameters. If the script requires more than 11 parameters or needs to run multiple scripts, use a function.
@@ -60,6 +62,8 @@ spriteObject.run(go_forward, 2);
 
 ```
 
+
+
 ### Deleting Sprites
 
 #### `terminate`
@@ -73,6 +77,7 @@ spriteObject.terminate()
 spriteObject.terminate(true)
 //will terminate sprite process and delete element
 ```
+
 
 #### `freeze`
 To freeze a sprite, use the `freeze()` function in a sprite object. It ends the sprite's render process but does not remove it from the sprite index. After freezing, the only way to update it is eaither to terminate and recreate the sprite, or use `forceSpriteUpdate()`.
@@ -94,6 +99,8 @@ spriteObject = getSprite(mySprite);
 
 `forceSpriteUpdate()` requires 1 parameter - the id of the sprite to update. It is the same id that is used in `getSprite()`. This script will immediately update the sprite without waiting until the next frame;
 
+
+
 ### Scripts
 
 
@@ -106,11 +113,14 @@ spriteObject.run(move_steps, 10);
 // will move sprite to 0, 10 presuming its direction is 90
 ```
 
+
 #### `change_x`, `change_y`, `set_x`, `set_x`
 Set/change X/Y position.
 
+
 #### `go_to`
 Requires 2 parameters, first for X, second for Y. Sets sprite's Position.
+
 
 #### `go_to_mouse`
 Moves sprite to mouse pointer.
@@ -119,6 +129,7 @@ Example:
 ```
 getSprite(mySprite).run(forever, go_to_mouse);
 ```
+
 
 #### `rotate_left`, `rotate_right`
 Rotate left/right `n` degrees.
@@ -129,23 +140,30 @@ spriteObject.run(rotate_right, 45);
 // will rotate sprite to 135° presuming its direction is 90°
 ```
 
+
 #### 🧊`rotate_x_left`, `rotate_x_right`
 Rotate X axis left/right `n` degrees.
+
 
 #### 🧊`rotate_y_left`, `rotate_y_right`
 Rotate Y axis left/right `n` degrees.
 
+
 #### `point_in_direction`
 Set sprite's direction.
+
 
 #### 🧊`set_x_rotation`
 Set sprite's X rotation.
 
+
 #### 🧊`set_y_rotation`
 Set sprite's Y rotation.
 
+
 #### `point_towards_mouse`
 Point sprite towards mouse pointer.
+
 
 #### `getDirection`
 NOTE: this is a function, not a script.
@@ -157,38 +175,50 @@ spriteObject.run(function(){point_in_direction(getDirection(spriteData.x, sprite
 // will point towards centre
 ```
 
+
 #### 🧊`define_camera_distance`
 Usually a value between 0 and 100. Defines the camera's perspective when using 3D effects.
 #### `set_costume`
 NOTE: Behaviour may change in the future.
 Set sprite's costume (display image) to url.
 
+
 #### `set_size`, `change_size`
 Sets/changes sprite's size to `n%`.
+
 
 #### 🌟`set_height`, `change_height`
 Sets/changes sprite's height to `n%`.
 
+
 #### 🌟`set_width`,  `change_width`
 Sets/changes sprite's width to `n%`.
+
 
 #### `go_forward`, `go_backward`
 Move forward/backward `n` layers.
 
+
 #### `go_to_front`, `go_to_back`
 Go to front/back of all other sprites.
+
 
 #### 🧪`go_to_layer`
 Move to specific layer.
 
+
 #### `set_opacity`, `change_opacity`
 Value from 0-100. Sets/changes opacity of sprite.
+
 
 #### 🛠️`await pause`
 Pause current thread for `n` seconds.
 
+
+
 ### Loops
 Loops can be used for any script and are not run from `spriteObject.run`.
+
 
 #### `repeat`
 Loop script `n` times. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, boolean, for whether or not to animate the frames. Has a fourth optional parameter, function, a callback to be run 1 frame after repeat loop is scheduled to end.
@@ -212,9 +242,10 @@ getSprite(mySprite).run(function(){
 // rotate 180 degrees over 90 frames
 ```
 
+
 #### `forever`
 Loop script forever. Requires 1 parameter, the function to run.
-TIP: Forever loops will always yield, but the yielding can be delayed by adding repeat loops inside the forever loop.
+TIP: Forever loops will always animate.
 
 Example:
 ```
@@ -224,46 +255,60 @@ rotate_right(1);
 // rotate 1 degree continuously
 ```
 
+
 #### 🧪`doLoop`
-Similar to an animated repeat loop, however all scripts are executed before next loop begins.
+Similar to an animated repeat loop, however all scripts are executed before next loop begins. May become a replacement for `repeat`.
 NOTE: First loop is executed immediately instead of after 1 frame.
+
+
 
 ### 🌟 Sprite Values
 
 #### 📖`id`
 Will return the sprite's id.
-eg.
+
+Example:
 ```
 spriteObject.id
 // will return ID
 spriteObject == getSprite(spriteObject.id) // true
 ```
 
+
 #### 📖`ref`
 Will return the element the render process is rendering to.
 
+
 #### 📖`direction`
 Will return the sprite's direction.
+
 
 #### `x`, `y`, `size`, `width`, `height`, `layer`, `opacity`
 Will return X/Y/size/width/height/layer/opacity of sprite.
 NOTE: changing these values is not recommended.
 
+
 #### `hidden`
 Will return boolean indicating whether or not the sprite is hidden.
 
+
 #### 📖`['3d']`
 Will return sprite's 3D object.
+
 
 ##### 📖`isEnabled`
 Will return boolean indicating whether or not the sprite is running in a 3D context.
 WARNING: Do not change this value, it is automatically set by the engine and is used to save resources when 3D is not needed.
 
+
 ##### `cameraDistance`
 Will return the 3D camera distance.
 
+
 #### 📖`rotateX`, `rotateY`
 Will return sprite's X/Y rotation.
+
+
 
 ### Global Values
 
@@ -274,15 +319,19 @@ Simulates the device screen being 'n' pixels. Default: `null`
 #### `mouseX`, `mouseY`
 Returns mouse X and Y position.
 
+
 #### `FPS`
 How many times per second the sprite's element should be updated.
+
 
 #### `CPS`
 How many script cycles should be run per second (applies to loops only).
 NOTE: A `repeat` loop's CPS cannot be changed after execution has begun.
 
+
 #### 📖🧪`touches`
 Returns an array of objects. Each object has a `mouseX` and `mouseY` key. This is used for when a user on a mobile device taps in multiple places at once.
 ### Sprite Data
+
 
 The sprite's object can be accessed through `spriteData` in a function or script.
