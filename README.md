@@ -82,8 +82,11 @@ spriteObject = getSprite(mySprite);
 ### Scripts
 
 🧪Experiment
+
 🧊Initiates 3D Engine
+
 📖Intended for Read-only
+
 
 #### `move_steps`
 Move sprite `n` pixels in current direction.
@@ -211,6 +214,10 @@ rotate_right(1);
 })});
 // rotate 1 degree continuously
 ```
+
+#### 🧪`doLoop`
+Similar to an animated repeat loop, however all scripts are executed before next loop begins.
+NOTE: First loop is executed immediately instead of after 1 frame.
 
 ### Sprite Values
 
