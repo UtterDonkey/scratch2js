@@ -111,7 +111,7 @@ Example:
 getSprite(mySprite).run(forever, go_to_mouse);
 ```
 
-#### 🧊`rotate_left`, `rotate_right`
+#### `rotate_left`, `rotate_right`
 Rotate left/right `n` degrees.
 
 #### 🧊`rotate_x_left`, `rotate_x_right`
