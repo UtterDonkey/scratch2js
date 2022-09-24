@@ -81,11 +81,11 @@ spriteObject = getSprite(mySprite);
 
 ### Scripts
 
-🧪Experiment
+🧪 Experiment
 
-🧊Initiates 3D Engine
+🧊 Initiates 3D Engine
 
-📖Intended for Read-only
+📖 Intended for Read-only
 
 
 #### `move_steps`
