@@ -22,7 +22,7 @@ Convert Scratch Projects To JavaScript
 To create a sprite, use `createSprite()`. It requires 1 parameter which is either an element to assign it to or an image URL to set as the costume. It will return an id that can be used to run scripts. To run scripts or read data from a sprite, use <code>getSprite()</code>. It will return the sprite object. It requires 1 parameter which is the id returned from the <code>createSprite()</code> function.
 
 Example:
-```
+```js
 mySprite = createSprite(https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png);
 spriteObject = getSprite(mySprite);
 ```
@@ -39,7 +39,7 @@ Deprecated - use `getSprite(demoSprite).terminate(true)` instead.
 To execute a script, use the `run()` function in a sprite object. It requires 2 parameters, the first is the name of the script, the second is the parameter. The `run` function supports up to 11 parameters. If the script requires more than 11 parameters or needs to run multiple scripts, use a function.
 
 Example:
-```
+```js
 spriteObject.run(function(){go_to(0, 0)});
 // will centre sprite
 
@@ -70,7 +70,7 @@ spriteObject.run(go_forward, 2);
 To delete a sprite, use the `terminate()` function in a sprite object. It ends the sprite's render process and removes it from the sprite index. It requires 1 parameter, this parameter is a boolean telling the function whether or not to delete the element from the DOM as well.
 
 Example:
-```
+```js
 spriteObject.terminate()
 // will terminate the sprite process but the element will still exist.
 
@@ -83,7 +83,7 @@ spriteObject.terminate(true)
 To freeze a sprite, use the `freeze()` function in a sprite object. It ends the sprite's render process but does not remove it from the sprite index. After freezing, the only way to update it is eaither to terminate and recreate the sprite, or use `forceSpriteUpdate()`.
 
 Example:
-```
+```js
 spriteObject.freeze();
 // will terminate the render process but the sprite will still remain indexed, allowing for forceSpriteUpdate() to work.
 
@@ -126,7 +126,7 @@ Your code can then then go in another script tag below those.
 Move sprite `n` pixels in current direction.
 
 Example:
-```
+```js
 spriteObject.run(move_steps, 10);
 // will move sprite to 0, 10 presuming its direction is 90
 ```
@@ -144,7 +144,7 @@ Requires 2 parameters, first for X, second for Y. Sets sprite's Position.
 Moves sprite to mouse pointer.
 
 Example:
-```
+```js
 getSprite(mySprite).run(forever, go_to_mouse);
 ```
 
@@ -153,7 +153,7 @@ getSprite(mySprite).run(forever, go_to_mouse);
 Rotate left/right `n` degrees.
 
 Example:
-```
+```js
 spriteObject.run(rotate_right, 45);
 // will rotate sprite to 135° presuming its direction is 90°
 ```
@@ -188,7 +188,7 @@ NOTE: this is a function, not a script.
 Requires 4 inputs, first for start X (usually sprite X), second for start Y (usually sprite Y), third for target X, fourth for target Y. Will return direction for if a sprite at start X and start Y was facing target X and target Y.
 
 Example:
-```
+```js
 spriteObject.run(function(){point_in_direction(getDirection(spriteData.x, spriteData.y, 0, 0))});
 // will point towards centre
 ```
@@ -242,7 +242,7 @@ Loops can be used for any script and are not run from `spriteObject.run`.
 Loop script `n` times. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, boolean, for whether or not to animate the frames. Has a fourth optional parameter, function, a callback to be run 1 frame after repeat loop is scheduled to end.
 
 Example:
-```
+```js
 
 repeat(90, function(){
 getSprite(mySprite).run(function(){
@@ -266,7 +266,7 @@ Loop script forever. Requires 1 parameter, the function to run.
 TIP: Forever loops will always animate.
 
 Example:
-```
+```js
 forever(function(){getSprite(mySprite).run(function(){
 rotate_right(1);
 })});
@@ -286,7 +286,7 @@ NOTE: First loop is executed immediately instead of after 1 frame.
 Will return the sprite's id.
 
 Example:
-```
+```js
 spriteObject.id
 // will return ID
 spriteObject == getSprite(spriteObject.id) // true
