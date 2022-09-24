@@ -83,6 +83,8 @@ spriteObject = getSprite(mySprite);
 
 🧪 Experiment
 
+🛠️ Not Fully Implemented
+
 🧊 Initiates 3D Engine
 
 📖 Intended for Read-only
@@ -177,7 +179,7 @@ Move to specific layer.
 #### `set_opacity`, `change_opacity`
 Value from 0-100. Sets/changes opacity of sprite.
 
-#### `await pause`
+#### 🛠️`await pause`
 Pause current thread for `n` seconds.
 
 ### Loops
