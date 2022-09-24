@@ -160,7 +160,7 @@ Set sprite's costume (display image) to url.
 Sets/changes sprite's size to `n%`.
 
 #### 🌟`set_height`, `change_height`
-Sets/changes sprite'sheight to `n%`.
+Sets/changes sprite's height to `n%`.
 
 #### 🌟`set_width`,  `change_width`
 Sets/changes sprite's width to `n%`.
@@ -169,7 +169,7 @@ Sets/changes sprite's width to `n%`.
 Move forward/backward `n` layers.
 
 #### `go_to_front`, `go_to_back`
-Go infront of/behind all other sprites.
+Go to front/back of all other sprites.
 
 #### 🧪`go_to_layer`
 Move to specific layer.
