@@ -81,6 +81,9 @@ spriteObject = getSprite(mySprite);
 
 ### Scripts
 
+🧪Experiment
+🧊Initiates 3D Engine
+
 #### `move_steps`
 Move sprite `n` pixels in current direction.
 
@@ -161,6 +164,9 @@ Move forward/backward `n` layers.
 
 #### `go_to_front`, `go_to_back`
 Go infront of/behind all other sprites.
+
+#### 🧪`go_to_layer`
+Move to specific layer.
 
 #### `set_opacity`, `change_opacity`
 Value from 0-100. Sets/changes opacity of sprite.
