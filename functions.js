@@ -175,6 +175,16 @@ function repeat(n, callback, animate, callback2){
   }
 };
 
+function doLoop(n, callback, callback2, m){
+      if(m === undefined) m =0;
+      if(m > n){
+        if(callback2) callback2()
+      }else{
+        callback()
+        setTimeout(doLoop, 1000/globalValues.CPS, n, callback, callback2, m+1)
+    }
+};
+
 function forever(callback){
     callback();
     setTimeout(function(){forever(callback);}, (1000/globalValues.CPS))
