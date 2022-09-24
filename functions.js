@@ -135,6 +135,10 @@ function go_backward(layers){
   spriteData.layer = spriteData.layer - layers;
 };
 
+function go_to_layer(layer){
+  spriteData.layer = layer;
+};
+
 function set_opacity(opacity){
   spriteData.opacity = opacity;
 };
