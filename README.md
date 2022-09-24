@@ -117,6 +117,14 @@ Download `global.js`, `functions.js` and `sprites.js` then put them in the same 
 NOTE: Scripts must be out in that order.
 Your code can then then go in another script tag below those.
 
+Pros:
+Works offline.
+When downloading, all the latest features are included.
+
+Cons:
+After downloading, you will not receive any more updates. Scripts will have to be manually re-downloaded and updated.
+3 different scripts and unminified code will increase storage usage.
+
 
 #### Use Scripts from GitHub
 
@@ -128,6 +136,52 @@ Enter the following in your HTML.
 ```
 NOTE: Scripts must be out in that order.
 Your code can then then go in another script tag below those.
+
+Pros:
+Updated as soon as new features come out.
+Will not take up storage space on server.
+
+Cons:
+3 different scripts and unminified code will increase loading times.
+Does not work offline.
+
+
+#### 🛠️ Download Minified Scripts
+
+Download `lib-min.js` then put it in the same folder as the HTML file you're running your script from. Then put the following in your HTML.
+
+```html
+  <script src="https://utterdonkey.github.io/scratch2js/lib-min.js"></script>
+```
+Your code can then then go in another script tag below that.
+
+Pros:
+Works offline.
+1 single minified script will reduce loading times and save server storage.
+
+Cons:
+After downloading, you will not receive any more updates. Scripts will have to be manually re-downloaded and updated.
+The minified version is not updated immediately when an update comes out.
+
+
+
+#### 🛠️ Use Minified Scripts from GitHub
+
+Enter the following in your HTML.
+```html
+  <script src="https://utterdonkey.github.io/scratch2js/lib-min.js"></script>
+```
+Your code can then then go in another script tag below that.
+
+Pros:
+
+1 single minified script will reduce loading times and save server storage.
+Updated as soon as new features are released for the minified version.
+Will not take up storage space on server.
+
+Cons:
+The minified version is not updated immediately when an update comes out.
+Does not work offline.
 
 
 ### Scripts
