@@ -26,10 +26,6 @@ globalFunctions.are_sprites_touching = function(sprite1, sprite2){
     const sprite2Radius = ((sprite2.ref.height*(sprite2.height/100)+sprite2.ref.width*(sprite2.width/100))/2)*(sprite2.size/100)
     const totalRadius = sprite1Radius/2+sprite2Radius/2
     const distanceBetweenSprites = Math.sqrt((sprite2.ref.x-sprite1.ref.x)**2+(sprite2.ref.y-sprite1.ref.y)**2)
-    const isTouching = distanceBetweenSprites < totalRadius
-    console.log('Distance: ' + distanceBetweenSprites)
-    console.log('Total Radius: ' + totalRadius)
-    console.log((!isTouching ? 'not' : '') + ' touching')
     return isTouching
 };
 window.addEventListener('load', function(){
