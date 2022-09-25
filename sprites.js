@@ -75,3 +75,6 @@ function forceSpriteUpdate(id){
     updateSprite(getSprite(id).ref, getSprite(id));
 }
 
+function trace(spriteData){
+    return getSprite(spriteData.id);
+}
