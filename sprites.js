@@ -57,6 +57,7 @@ function createSprite(image){
   };
   sprite.terminate = function(removeElement){
     clearTimeout(this.renderProcess);
+    if(!this.isOriginal) getSprite(this.original).clones.splice(this.id, 0);
     sprites.splice(this.id, 0);
     if(removeElement) this.ref.remove();
   }
