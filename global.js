@@ -20,6 +20,17 @@ globalValues.getFixedValue = function(dimension){
         }
     }
 }
+globalValues.are_sprites_touching = function(sprite1, sprite2){
+    const sprite1Radius = (sprite1.ref.height+sprite1.ref.width)/2
+    const sprite2Radius = (sprite2.ref.height+sprite2.ref.width)/2
+    const totalRadius = sprite1Radius/2+sprite2Radius/2
+    const distanceBetweenSprites = Math.sqrt((sprite2.ref.x-sprite1.ref.x)**2+(sprite2.ref.y-sprite1.ref.y)**2)
+    const isTouching = distanceBetweenSprites < totalRadius
+    console.log('Distance: ' + distanceBetweenSprites)
+    console.log('Total Radius: ' + totalRadius)
+    console.log((!isTouching ? 'not' : '') + ' touching')
+    return isTouching
+};
 window.addEventListener('load', function(){
     document.body.addEventListener('mousemove', function(e){
         let x = (e.clientX - (window.innerWidth/2));
