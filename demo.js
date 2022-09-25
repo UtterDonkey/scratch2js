@@ -3,7 +3,6 @@ document.body.insertAdjacentHTML('beforeEnd', `<h1 style="
 ">Test</h1>`);
 demoSprite = createSprite('https://cdn.assets.scratch.mit.edu/internalapi/asset/7e24c99c1b853e52f8e7f9004416fa34.png/get');
 function removeDemoSprite(){
-    clearTimeout(getSprite(demoSprite).renderProcess);
-    document.getElementById('sprite#' + demoSprite).remove();
-    demoSprite = undefined;
+    getSprite(demoSprite).terminate(true);
+    console.warn('removeDemoSprite is deprecated - use getSprite(demoSprite).terminate(true)')
 };
