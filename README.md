@@ -23,7 +23,7 @@ To create a sprite, use `createSprite()`. It requires 1 parameter which is eithe
 
 Example:
 ```js
-mySprite = createSprite(https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png);
+mySprite = createSprite('https://www.google.co.uk/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png');
 spriteObject = getSprite(mySprite);
 ```
 #### ⚠️ Remove Demo Sprite
