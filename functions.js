@@ -1,11 +1,6 @@
 
 
-function updateDirection(){
-  spriteData.direction = spriteData.direction%360;
-  spriteData['3d'].rotateX = spriteData['3d'].rotateX%360;
-  spriteData['3d'].rotateY = spriteData['3d'].rotateY%360;
-  if(spriteData['3d'].rotateX != 90 || spriteData['3d'].rotateY != 90) spriteData['3d'].isEnabled = true;
-};
+
 function move_steps(steps){
   change_x(Math.sin(spriteData.direction - 90));
   change_y(Math.cos(spriteData.direction - 90));
@@ -62,21 +57,21 @@ function rotate_right(deg){
 
  function point_in_direction(dir){
   spriteData.direction = dir;
-  updateDirection();
+  globalFunctions.updateDirection();
  };
 
  function set_x_rotation(dir){
    spriteData['3d'].rotateX = dir;
-   updateDirection();
+   globalFunctions.updateDirection();
  };
 
  function set_y_rotation(dir){
    spriteData['3d'].rotateY = dir;
-   updateDirection();
+   globalFunctions.updateDirection();
  };
 
  function point_towards_mouse(){
-  point_in_direction(getDirection(spriteData.x, spriteData.y, globalValues.mouseX, globalValues.mouseY));
+  point_in_direction(globalFunctions.getDirection(spriteData.x, spriteData.y, globalValues.mouseX, globalValues.mouseY));
  };
 
 function define_camera_distance(cameraDistance){
@@ -119,11 +114,11 @@ function hide(){
 };
 
 function go_to_front(){
-  spriteData.layer = getMaxLayer()+1
+  spriteData.layer = globalFunctions.getMaxLayer()+1
 };
 
 function go_to_back(){
-  moveSpritesUp();
+  globalFunctions.moveSpritesUp();
   spriteData.layer = 0;
 };
 
