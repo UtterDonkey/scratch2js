@@ -340,7 +340,7 @@ rotate_right(1);
 
 
 #### 🧪`do_repeat`
-Similar to an animated repeat loop, however all scripts are executed before next loop begins. May become a replacement for `repeat`.
+Similar to an animated repeat loop, however all scripts are executed before next loop begins. May become a replacement for `repeat`. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, function, a callback to be run 1 frame after the loop ends.
 NOTE: First loop is executed immediately instead of after 1 frame.
 
 
