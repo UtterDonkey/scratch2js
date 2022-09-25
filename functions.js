@@ -144,9 +144,8 @@ function change_opacity(opacity){
 
 function clone(){
   const cloneElem = spriteData.original.ref.cloneNode(true);
-  spriteData.original.ref.insertAdjacentElement('AfterEnd', cloneElem);
-  const newClone = createSprite(spriteData.original.ref.children[spriteData.original.ref.children.length-1]);
-  getSprite(newClone).ref.id = 'sprite#' + getSprite(newClone).id;
+  const newClone = createSprite(cloneElem);
+  cloneElem.id = 'sprite#' + getSprite(newClone).id;
   getSprite(newClone).isOriginal = false;
   getSprite(newClone).original = spriteData.original;
   spriteData.original.clones.push(newClone);
