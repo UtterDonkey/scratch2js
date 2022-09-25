@@ -32,7 +32,7 @@ function createSprite(image){
   sprite.ref = assignElement ? image : document.getElementById('sprite#' + id)
   sprite.id = parseFloat(id);
   sprite.isOriginal = true;
-  sprite.original = sprite;
+  sprite.original = sprite.id;
   sprite.clones = [];
   sprite.direction = 90;
   sprite.x = 0;
