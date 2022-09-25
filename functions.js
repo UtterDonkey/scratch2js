@@ -142,6 +142,12 @@ function change_opacity(opacity){
   spriteData.opacity = spriteData.opacity + opacity;
 };
 
+function clone(){
+  const newClone = createSprite(spriteData.ref.cloneNode(true));
+  getSprite(newClone).isOriginal = false;
+  getSprite(newClone).original = spriteData.id;
+  return newClone;
+}
 wait = (waitTime) => {
   return new Promise((resolve) => {
     setTimeout(resolve, waitTime);
