@@ -33,6 +33,7 @@ function createSprite(image){
   sprite.id = parseFloat(id);
   sprite.isOriginal = true;
   sprite.original = sprite;
+  sprite.clones = [];
   sprite.direction = 90;
   sprite.x = 0;
   sprite.y = 0;
