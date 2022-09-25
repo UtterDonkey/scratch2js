@@ -61,6 +61,15 @@ spriteObject.run(go_forward, 2);
 // will move the sprite forward 2 layers
 
 ```
+🌟NOTE: `spriteObject.run(...)` will return the value returned from the executed script.
+Example:
+```js
+/* Before Update */
+spriteObject.run(function(){return true}) // undefined
+
+/* After Update */
+spriteObject.run(function(){return true}) // true
+```
 
 
 
