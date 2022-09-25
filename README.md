@@ -402,6 +402,10 @@ Will return the 3D camera distance.
 Will return sprite's X/Y rotation.
 
 
+#### 📖🧪`clones`
+Will return list of clones' IDs.
+
+
 
 ### Global Values
 
