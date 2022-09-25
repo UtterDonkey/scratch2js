@@ -181,7 +181,7 @@ function do_repeat(n, callback, callback2, m){
         if(callback2) callback2()
       }else{
         callback()
-        setTimeout(doLoop, 1000/globalValues.CPS, n, callback, callback2, m+1)
+        setTimeout(do_repeat, 1000/globalValues.CPS, n, callback, callback2, m+1)
     }
 };
 
