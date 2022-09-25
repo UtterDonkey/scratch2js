@@ -49,7 +49,7 @@ function createSprite(image){
     this.spriteData = this;
     spriteData = this.spriteData;
     spriteData;
-    script(param, param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
+    return script(param, param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
     spriteData = undefined;
   };
   sprite.terminate = function(removeElement){
