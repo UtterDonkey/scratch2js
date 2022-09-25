@@ -62,6 +62,7 @@ spriteObject.run(go_forward, 2);
 
 ```
 🌟NOTE: `spriteObject.run(...)` will return the value returned from the executed script.
+
 Example:
 ```js
 /* Before Update */
