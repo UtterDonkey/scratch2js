@@ -143,10 +143,9 @@ function change_opacity(opacity){
 };
 
 function clone(){
-  const cloneElem = spriteData.original.ref.cloneNode(true);
-  const newClone = createSprite(cloneElem);
-  cloneElem.id = 'sprite#' + getSprite(newClone).id;
-  getSprite(newClone).isOriginal = false;
+  const cloneElem = spriteData.original.ref.insertAdjacentElement('AfterEnd', spriteData.original.ref.cloneNode(true));
+  const newClone = createSprite();
+  getSprite(newClone).ref.id = 'sprite#' + getSprite(newClone).id;
   getSprite(newClone).original = spriteData.original;
   spriteData.original.clones.push(newClone);
   return newClone;
