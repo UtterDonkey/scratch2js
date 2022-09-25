@@ -339,7 +339,7 @@ rotate_right(1);
 ```
 
 
-#### 🧪`doLoop`
+#### 🧪`do_repeat`
 Similar to an animated repeat loop, however all scripts are executed before next loop begins. May become a replacement for `repeat`.
 NOTE: First loop is executed immediately instead of after 1 frame.
 
