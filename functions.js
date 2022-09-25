@@ -143,9 +143,10 @@ function change_opacity(opacity){
 };
 
 function clone(){
-  const newClone = createSprite(spriteData.ref.cloneNode(true));
+  const newClone = createSprite(spriteData.original.ref.cloneNode(true));
   getSprite(newClone).isOriginal = false;
-  getSprite(newClone).original = spriteData.id;
+  getSprite(newClone).original = spriteData.original.id;
+  spriteData.original.clones.push(newClone);
   return newClone;
 }
 wait = (waitTime) => {
