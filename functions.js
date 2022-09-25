@@ -143,12 +143,15 @@ function change_opacity(opacity){
 };
 
 function clone(){
-  const newClone = createSprite(spriteData.original.ref.cloneNode(true));
+  const cloneElem = spriteData.original.ref.cloneNode(true);
+  spriteData.original.ref.appendChild(cloneElem);
+  const newClone = createSprite(spriteData.original.ref.children[spriteData.original.ref.children.length-1]);
+  getSprite(newClone).ref.id = 'sprite#' + getSprite(newClone).id;
   getSprite(newClone).isOriginal = false;
   getSprite(newClone).original = spriteData.original.id;
   spriteData.original.clones.push(newClone);
   return newClone;
-}
+};
 wait = (waitTime) => {
   return new Promise((resolve) => {
     setTimeout(resolve, waitTime);
