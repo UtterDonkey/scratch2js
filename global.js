@@ -1,11 +1,12 @@
 const globalValues = {};
+const globalFunctions = {};
 globalValues.FPS = 60;
 globalValues.CPS = 100;
 globalValues.touches = [];
 globalValues.fixedWidth = null;
 globalValues.fixedHeight = null;
 globalValues.touchTimeout = 0;
-globalValues.getFixedValue = function(dimension){
+globalFunctions.getFixedValue = function(dimension){
     if(dimension == 'height'){
         if(globalValues.fixedHeight == null){
             return 1;
@@ -20,7 +21,7 @@ globalValues.getFixedValue = function(dimension){
         }
     }
 }
-globalValues.are_sprites_touching = function(sprite1, sprite2){
+globalFunctions.are_sprites_touching = function(sprite1, sprite2){
     const sprite1Radius = (sprite1.ref.height+sprite1.ref.width)/2
     const sprite2Radius = (sprite2.ref.height+sprite2.ref.width)/2
     const totalRadius = sprite1Radius/2+sprite2Radius/2
@@ -35,8 +36,8 @@ window.addEventListener('load', function(){
     document.body.addEventListener('mousemove', function(e){
         let x = (e.clientX - (window.innerWidth/2));
         let y = ((window.innerHeight/2) - e.clientY);
-        globalValues.mouseX = x*globalValues.getFixedValue('width');
-        globalValues.mouseY = y*globalValues.getFixedValue('height');
+        globalValues.mouseX = x*globalFunctions.getFixedValue('width');
+        globalValues.mouseY = y*globalFunctions.getFixedValue('height');
         
     });
     document.body.addEventListener('touchstart', function(e){
@@ -45,8 +46,8 @@ window.addEventListener('load', function(){
             let x = (e.touches[i].clientX - (window.innerWidth/2));
             let y = ((window.innerHeight/2) - e.touches[i].clientY);
             let pushData = {};
-            pushData.mouseX = x*globalValues.getFixedValue('width');
-            pushData.mouseY = y*globalValues.getFixedValue('height');
+            pushData.mouseX = x*globalFunctions.getFixedValue('width');
+            pushData.mouseY = y*globalFunctions.getFixedValue('height');
             globalValues.touches.push(pushData);
         }
     });
@@ -56,11 +57,11 @@ window.addEventListener('load', function(){
 });
 
 
-function getDirection(startX, startY, endX, endY){
+globalFunctions.getDirection = function(startX, startY, endX, endY){
   return ((Math.atan((endX-startX)/(endY-startY))*180)/Math.PI)-(180*(endY<startY));
 };
 
-function getMaxLayer(){
+globalFunctions.getMaxLayer = function(){
     const temp = sprites;
     let max = 0;
     for(i = 0; i < temp.length; i++){
@@ -71,7 +72,7 @@ function getMaxLayer(){
     return max;
 };
 
-function moveSpritesUp(){
+globalFunctions.moveSpritesUp = function(){
     const temp = sprites;
     for(i = 0; i < temp.length; i++){
         temp[i].layer = temp[i].layer+1;
