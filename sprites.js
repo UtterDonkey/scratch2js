@@ -31,6 +31,8 @@ function createSprite(image){
   sprite.costume = assignElement ? null : image;
   sprite.ref = assignElement ? image : document.getElementById('sprite#' + id)
   sprite.id = parseFloat(id);
+  sprite.isOriginal = true;
+  sprite.original = sprite;
   sprite.direction = 90;
   sprite.x = 0;
   sprite.y = 0;
