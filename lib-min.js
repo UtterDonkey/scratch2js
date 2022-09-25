@@ -1,4 +1,4 @@
-/* Please note - this file is not updated as often as the scripts, so when using this script, you may have to wait longer for new updates. */
+/* Please note - this file is not updated as often as the main scripts, so when using this script, you may have to wait longer for new updates. */
 /* Copyright: Pixelbulb 2022 https://pixelbulb.online */
 /* You may use this script without prior permission or credit as long as nothing, including comments, is omitted */
 
