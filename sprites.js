@@ -3,8 +3,8 @@ const sprites = []
 function updateSprite(spriteID, data){
     spriteID.src = data.costume == null ? spriteID.src : data.costume;
     spriteID.style.zIndex = data.layer;
-    let x = (data.x*globalValues.getFixedValue('width')) + (window.innerWidth/2);
-    let y = -(data.y*globalValues.getFixedValue('height')) + (window.innerHeight/2);
+    let x = (data.x*globalFunctions.getFixedValue('width')) + (window.innerWidth/2);
+    let y = -(data.y*globalFunctions.getFixedValue('height')) + (window.innerHeight/2);
     spriteID.style.position = 'fixed';
     spriteID.style.left = x - (spriteID.clientWidth/2) + 'px';
     spriteID.style.top = y - (spriteID.clientHeight/2) + 'px';
@@ -38,7 +38,7 @@ function createSprite(image){
   sprite.size = 100;
   sprite.height = 100;
   sprite.width = 100;
-  sprite.layer = getMaxLayer()+1;
+  sprite.layer = globalFunctions.getMaxLayer()+1;
   sprite.opacity = 100;
   sprite['3d'] = {};
   sprite['3d'].rotateX = 90;
