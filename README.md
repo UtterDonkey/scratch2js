@@ -212,7 +212,7 @@ Set/change X/Y position.
 
 
 #### `go_to`
-Requires 2 parameters, first for X, second for Y. Sets sprite's Position.
+Requires 2 parameters, first for X, second for Y. Sets sprite's position.
 
 
 #### `go_to_mouse`
