@@ -105,9 +105,9 @@ spriteObject = getSprite(mySprite);
 ```
 
 
-#### Forcing Sprite Updates
+### Forcing Sprite Updates
 
-`forceSpriteUpdate()` requires 1 parameter - the id of the sprite to update. It is the same id that is used in `getSprite()`. This script will immediately update the sprite without waiting until the next frame;
+`forceSpriteUpdate()` requires 1 parameter - the id of the sprite to update. It is the same id that is used in `getSprite()`. This script will immediately update the sprite without waiting until the next frame.
 
 
 
