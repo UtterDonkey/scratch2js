@@ -161,7 +161,7 @@ Does not work offline.
 Download `lib-min.js` then put it in the same folder as the HTML file you're running your script from. Then put the following in your HTML.
 
 ```html
-  <script src="https://utterdonkey.github.io/scratch2js/lib-min.js"></script>
+  <script src="lib-min.js"></script>
 ```
 Your code can then then go in another script tag below that.
 
