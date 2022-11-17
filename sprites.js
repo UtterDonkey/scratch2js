@@ -25,7 +25,7 @@ function createSprite(image){
   if(!assignElement){
      element = document.createElement('img');
      element.id = 'sprite#' + id;
-     document.body.appendChild(element); 
+     globalFunctions.stage().appendChild(element); 
   };
   sprite = sprites[id];
   sprite.costume = assignElement ? null : image;
