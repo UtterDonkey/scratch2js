@@ -11,13 +11,13 @@ globalFunctions.getFixedValue = function(dimension){
         if(globalValues.fixedHeight == null){
             return 1;
         }else{
-            return globalFunctions.stage().innerHeight/globalValues.fixedHeight;
+            return globalFunctions.stage().clientHeight/globalValues.fixedHeight;
         }
     }else{
         if(globalValues.fixedWidth == null){
             return 1;
         }else{
-            return globalFunctions.stage().innerWidth/globalValues.fixedWidth;
+            return globalFunctions.stage().clientWidth/globalValues.fixedWidth;
         }
     }
 }
@@ -33,8 +33,8 @@ globalFunctions.stage = () => {
 }
 window.addEventListener('load', function(){
     globalFunctions.stage().addEventListener('mousemove', function(e){
-        let x = (e.clientX - (globalFunctions.stage().innerWidth/2));
-        let y = ((globalFunctions.stage().innerHeight/2) - e.clientY);
+        let x = (e.clientX - (globalFunctions.stage().clientWidth/2));
+        let y = ((globalFunctions.stage().clientHeight/2) - e.clientY);
         globalValues.mouseX = x*globalFunctions.getFixedValue('width');
         globalValues.mouseY = y*globalFunctions.getFixedValue('height');
         
@@ -42,8 +42,8 @@ window.addEventListener('load', function(){
     globalFunctions.stage().addEventListener('touchstart', function(e){
         clearTimeout(globalValues.touchTimeout);
         for(let i=0; i<e.touches.length; i++){
-            let x = (e.touches[i].clientX - (globalFunctions.stage().innerWidth/2));
-            let y = ((globalFunctions.stage().innerHeight/2) - e.touches[i].clientY);
+            let x = (e.touches[i].clientX - (globalFunctions.stage().clientWidth/2));
+            let y = ((globalFunctions.stage().clientHeight/2) - e.touches[i].clientY);
             let pushData = {};
             pushData.mouseX = x*globalFunctions.getFixedValue('width');
             pushData.mouseY = y*globalFunctions.getFixedValue('height');
