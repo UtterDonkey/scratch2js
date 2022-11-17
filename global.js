@@ -11,13 +11,13 @@ globalFunctions.getFixedValue = function(dimension){
         if(globalValues.fixedHeight == null){
             return 1;
         }else{
-            return window.innerHeight/globalValues.fixedHeight;
+            return globalFunctions.stage().innerHeight/globalValues.fixedHeight;
         }
     }else{
         if(globalValues.fixedWidth == null){
             return 1;
         }else{
-            return window.innerWidth/globalValues.fixedWidth;
+            return globalFunctions.stage().innerWidth/globalValues.fixedWidth;
         }
     }
 }
@@ -28,26 +28,29 @@ globalFunctions.are_sprites_touching = function(sprite1, sprite2){
     const distanceBetweenSprites = Math.sqrt((sprite2.ref.x-sprite1.ref.x)**2+(sprite2.ref.y-sprite1.ref.y)**2)
     return isTouching
 };
+globalFunctions.stage = () => {
+    return document.querySelector('pillor') ? document.querySelector('pillor') : document.body;
+}
 window.addEventListener('load', function(){
-    document.body.addEventListener('mousemove', function(e){
-        let x = (e.clientX - (window.innerWidth/2));
-        let y = ((window.innerHeight/2) - e.clientY);
+    globalFunctions.stage().addEventListener('mousemove', function(e){
+        let x = (e.clientX - (globalFunctions.stage().innerWidth/2));
+        let y = ((globalFunctions.stage().innerHeight/2) - e.clientY);
         globalValues.mouseX = x*globalFunctions.getFixedValue('width');
         globalValues.mouseY = y*globalFunctions.getFixedValue('height');
         
     });
-    document.body.addEventListener('touchstart', function(e){
+    globalFunctions.stage().addEventListener('touchstart', function(e){
         clearTimeout(globalValues.touchTimeout);
         for(let i=0; i<e.touches.length; i++){
-            let x = (e.touches[i].clientX - (window.innerWidth/2));
-            let y = ((window.innerHeight/2) - e.touches[i].clientY);
+            let x = (e.touches[i].clientX - (globalFunctions.stage().innerWidth/2));
+            let y = ((globalFunctions.stage().innerHeight/2) - e.touches[i].clientY);
             let pushData = {};
             pushData.mouseX = x*globalFunctions.getFixedValue('width');
             pushData.mouseY = y*globalFunctions.getFixedValue('height');
             globalValues.touches.push(pushData);
         }
     });
-    document.body.addEventListener('touchend', function(e){
+    globalFunctions.stage().addEventListener('touchend', function(e){
         globalValues.touchTimeout = setTimeout(function(){globalValues.touches = [];}, 300);
     });
 });
