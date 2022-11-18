@@ -33,8 +33,8 @@ globalFunctions.stage = () => {
 }
 window.addEventListener('load', function(){
     globalFunctions.stage().addEventListener('mousemove', function(e){
-        let x = (e.clientX - (globalFunctions.stage().clientWidth/2));
-        let y = ((globalFunctions.stage().clientHeight/2) - e.clientY);
+        let x = (e.clientX - globalFunctions.stage().getBoundingClientRect().left - (globalFunctions.stage().clientWidth/2));
+        let y = (globalFunctions.stage().getBoundingClientRect().top + (globalFunctions.stage().clientHeight/2) - e.clientY);
         globalValues.mouseX = x*globalFunctions.getFixedValue('width');
         globalValues.mouseY = y*globalFunctions.getFixedValue('height');
         
