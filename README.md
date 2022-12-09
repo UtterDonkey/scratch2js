@@ -277,6 +277,8 @@ Rotate X axis left/right `n` degrees.
 #### 🧊`rotate_y_left`, `rotate_y_right`
 Rotate Y axis left/right `n` degrees.
 
+#### `rotate_z_left`, `rotate_z_right`
+Rotate Z axis left/right `n` degrees.
 
 #### `point_in_direction`
 Set sprite's direction.
@@ -289,21 +291,12 @@ Set sprite's X rotation.
 #### 🧊`set_y_rotation`
 Set sprite's Y rotation.
 
+#### `set_z_rotation`
+Set sprite's Z rotation.
+
 
 #### `point_towards_mouse`
 Point sprite towards mouse pointer.
-
-
-#### `getDirection`
-NOTE: this is a function, not a script.
-Requires 4 inputs, first for start X (usually sprite X), second for start Y (usually sprite Y), third for target X, fourth for target Y. Will return direction for if a sprite at start X and start Y was facing target X and target Y.
-
-Example:
-```js
-spriteObject.run(function(){point_in_direction(getDirection(spriteData.x, spriteData.y, 0, 0))});
-// will point towards centre
-```
-
 
 #### 🧊`define_camera_distance`
 Usually a value between 0 and 100. Defines the camera's perspective when using 3D effects.
@@ -349,7 +342,7 @@ Pause current thread for `n` seconds.
 Loops can be used for any script and are not run from `spriteObject.run`.
 
 
-#### `repeat`
+#### `repeat(loops, script, animate, callback)`
 Loop script `n` times. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, boolean, for whether or not to animate the frames. Has a fourth optional parameter, function, a callback to be run 1 frame after repeat loop is scheduled to end.
 
 Example:
@@ -372,7 +365,7 @@ getSprite(mySprite).run(function(){
 ```
 
 
-#### `forever`
+#### `forever(script)`
 Loop script forever. Requires 1 parameter, the function to run.
 TIP: Forever loops will always animate.
 
@@ -385,7 +378,7 @@ rotate_right(1);
 ```
 
 
-#### 🧪`do_repeat`
+#### 🧪`do_repeat(loops, script, callback)`
 Similar to an animated repeat loop, however all scripts are executed before next loop begins. May become a replacement for `repeat`. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, function, a callback to be run 1 frame after the loop ends.
 NOTE: First loop is executed immediately instead of after 1 frame.
 
@@ -438,7 +431,7 @@ Will return the 3D camera distance.
 Will return sprite's X/Y rotation.
 
 
-#### 📖🧪`clones`
+#### 📖`clones`
 Will return list of clones' IDs.
 
 
@@ -474,12 +467,25 @@ The sprite's object can be accessed through `spriteData` in a function or script
 
 Global functions can be accessed from the `globalFunctions` object.
 
-#### `stage`
+#### `stage()`
 
 Will return either `document.body` or the `div` inside the `pillor`.
 
 
-#### `are_sprites_touching`
+#### `are_sprites_touching(sprite1, sprite2)`
 
 Requires 2 parameters, both sprites objects. Will return whether the likleyhood of the 2 sprites overlapping is above 50%.
+
+
+#### `getDirection(originX, originY, targetX, targetY)`
+
+NOTE: This function is mainly for internal use only.
+Requires 4 inputs, first for start X (usually sprite X), second for start Y (usually sprite Y), third for target X, fourth for target Y. Will return direction for if a sprite at start X and start Y was facing target X and target Y.
+
+Example:
+```js
+spriteObject.run(point_in_direction, globalFunctions.getDirection(spriteData.x, spriteData.y, 0, 0));
+// will point towards centre
+```
+
 
