@@ -233,7 +233,7 @@ Does not work offline.
 ### Scripts
 
 
-#### `move_steps`
+#### `move_steps(steps)`
 Move sprite `n` pixels in current direction.
 
 Example:
@@ -243,15 +243,15 @@ spriteObject.run(move_steps, 10);
 ```
 
 
-#### `change_x`, `change_y`, `set_x`, `set_x`
+#### `change_x(value)`, `change_y(value)`, `set_x(value)`, `set_x(value)`
 Set/change X/Y position.
 
 
-#### `go_to`
+#### `go_to(x, y)`
 Requires 2 parameters, first for X, second for Y. Sets sprite's position.
 
 
-#### `go_to_mouse`
+#### `go_to_mouse()`
 Moves sprite to mouse pointer.
 
 Example:
@@ -260,7 +260,7 @@ getSprite(mySprite).run(forever, go_to_mouse);
 ```
 
 
-#### `rotate_left`, `rotate_right`
+#### `rotate_left(degrees)`, `rotate_right(degrees)`
 Rotate left/right `n` degrees.
 
 Example:
@@ -270,67 +270,74 @@ spriteObject.run(rotate_right, 45);
 ```
 
 
-#### 🧊`rotate_x_left`, `rotate_x_right`
+#### 🧊`rotate_x_left(degrees)`, `rotate_x_right(degrees)`
 Rotate X axis left/right `n` degrees.
 
 
-#### 🧊`rotate_y_left`, `rotate_y_right`
+#### 🧊`rotate_y_left(degrees)`, `rotate_y_right(degrees)`
 Rotate Y axis left/right `n` degrees.
 
-#### `rotate_z_left`, `rotate_z_right`
+#### `rotate_z_left(degrees)`, `rotate_z_right(degrees)`
 Rotate Z axis left/right `n` degrees.
 
-#### `point_in_direction`
+#### `point_in_direction(degrees)`
 Set sprite's direction.
 
 
-#### 🧊`set_x_rotation`
+#### 🧊`set_x_rotation(degrees)`
 Set sprite's X rotation.
 
 
-#### 🧊`set_y_rotation`
+#### 🧊`set_y_rotation(degrees)`
 Set sprite's Y rotation.
 
-#### `set_z_rotation`
+#### `set_z_rotation(degrees)`
 Set sprite's Z rotation.
 
 
-#### `point_towards_mouse`
+#### `point_towards_mouse()`
 Point sprite towards mouse pointer.
 
-#### 🧊`define_camera_distance`
+#### 🧊`define_camera_distance(value)`
 Usually a value between 0 and 100. Defines the camera's perspective when using 3D effects.
-#### `set_costume`
+
+
+#### `set_costume(url)`
 NOTE: Behaviour may change in the future.
 Set sprite's costume (display image) to url.
 
 
-#### `set_size`, `change_size`
+#### `set_size(value)`, `change_size(value)`
 Sets/changes sprite's size to `n%`.
 
 
-#### `set_height`, `change_height`
+#### `set_height(value)`, `change_height(value)`
 Sets/changes sprite's height to `n%`.
 
 
-#### `set_width`,  `change_width`
+#### `set_width(value)`,  `change_width(value)`
 Sets/changes sprite's width to `n%`.
 
 
-#### `go_forward`, `go_backward`
+#### `go_forward(layers)`, `go_backward(layers)`
 Move forward/backward `n` layers.
 
 
-#### `go_to_front`, `go_to_back`
+#### `go_to_front()`, `go_to_back()`
 Go to front/back of all other sprites.
 
 
-#### 🧪`go_to_layer`
+#### 🧪`go_to_layer(value)`
 Move to specific layer.
 
 
-#### `set_opacity`, `change_opacity`
+#### `set_opacity(value)`, `change_opacity(value)`
 Value from 0-100. Sets/changes opacity of sprite.
+
+
+#### `clone()`
+
+Will create a new sprite with the same properties as the current sprite. It will return the ID of the new sprite.
 
 
 #### 🛠️`await pause`
