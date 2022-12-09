@@ -113,6 +113,40 @@ spriteObject = getSprite(mySprite);
 
 
 
+### Packaging
+
+NOTE: Importing projects from a string is for Pillor. You can only create projects like this using the Pillor Game Engine.
+
+The following keys in the `project` object are only for use with Pillor: `sprites`, `options`, `start`, `console`, `idle`, `running`.
+
+#### `stop`
+Will stop render processes of all sprites.
+
+#### `<pillor>`
+To contain the scratch2js engine in an element, use a `div` inside a `<pillor>` element.
+
+Example:
+
+```html
+
+<pillor>
+  <div id="canvas">
+    <!-- Sprites will be created here -->
+  </div>
+</pillor>
+```
+
+The `div` will also need styling.
+
+```css
+div#canvas{
+    overflow: clip;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+```
+
 ### Deployment
 
 You can deploy your scripts on another site/HTML application using 4 different methods.
