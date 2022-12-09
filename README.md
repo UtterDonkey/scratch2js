@@ -119,7 +119,7 @@ NOTE: Importing projects from a string is for Pillor. You can only create projec
 
 The following keys in the `project` object are only for use with Pillor: `sprites`, `options`, `start`, `console`, `idle`, `running`.
 
-#### `stop`
+#### `project.stop`
 Will stop render processes of all sprites.
 
 #### `<pillor>`
