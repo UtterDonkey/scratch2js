@@ -4,8 +4,6 @@ Convert Scratch Projects To JavaScript
 
 ## Docs
 
-NOTE: scratch2js recently received a new update changing how the engine works, the documentation has not yet been updated. The old version is available in the Pillor branch.
-
 🧪 Experiment
 
 🛠️ Not Fully Implemented
@@ -78,7 +76,7 @@ spriteObject.run(function(){return true}) // true
 
 ### Deleting Sprites
 
-#### `terminate`
+#### `terminate(deleteElement)`
 To delete a sprite, use the `terminate()` function in a sprite object. It ends the sprite's render process and removes it from the sprite index. It requires 1 parameter, this parameter is a boolean telling the function whether or not to delete the element from the DOM as well.
 
 Example:
@@ -91,7 +89,7 @@ spriteObject.terminate(true)
 ```
 
 
-#### `freeze`
+#### `freeze()`
 To freeze a sprite, use the `freeze()` function in a sprite object. It ends the sprite's render process but does not remove it from the sprite index. After freezing, the only way to update it is eaither to terminate and recreate the sprite, or use `forceSpriteUpdate()`.
 
 Example:
@@ -112,6 +110,10 @@ spriteObject = getSprite(mySprite);
 `forceSpriteUpdate()` requires 1 parameter - the id of the sprite to update. It is the same id that is used in `getSprite()`. This script will immediately update the sprite without waiting until the next frame.
 
 
+### 🌟Tracing Sprite Objects
+
+`trace(spriteObject)` will return the original sprite object. Useful for when getting sprite objects from a `spriteObject.clones` array.
+
 
 ### 🌟Packaging
 
@@ -119,7 +121,7 @@ NOTE: Importing projects from a string is for Pillor. You can only create projec
 
 The following keys in the `project` object are only for use with Pillor: `sprites`, `options`, `start`, `console`, `idle`, `running`.
 
-#### `project.stop`
+#### `project.stop()`
 Will stop render processes of all sprites.
 
 #### `<pillor>`
@@ -335,7 +337,7 @@ Move to specific layer.
 Value from 0-100. Sets/changes opacity of sprite.
 
 
-#### `clone()`
+#### 🌟`clone()`
 
 Will create a new sprite with the same properties as the current sprite. It will return the ID of the new sprite.
 
@@ -421,6 +423,20 @@ NOTE: changing these values is not recommended.
 Will return boolean indicating whether or not the sprite is hidden.
 
 
+#### 📖🌟`clones`
+Will return array of clones' IDs.
+
+
+### 📖🌟`isOriginal`
+
+Will return bollean indicating whether or not that sprite is the original sprite or is a clone.
+
+
+### 📖🌟`original`
+
+Will return sprite object of original sprite.
+
+
 #### 📖`['3d']`
 Will return sprite's 3D object.
 
@@ -436,10 +452,6 @@ Will return the 3D camera distance.
 
 ##### 📖`['3d'].rotateX`, `['3d'].rotateY`
 Will return sprite's X/Y rotation.
-
-
-#### 📖`clones`
-Will return list of clones' IDs.
 
 
 
