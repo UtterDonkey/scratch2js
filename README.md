@@ -4,6 +4,8 @@ Convert Scratch Projects To JavaScript
 
 ## Docs
 
+NOTE: scratch2js recently received a new update changing how the engine works, the documentation has not yet been updated. The old version is available in the Pillor branch.
+
 🧪 Experiment
 
 🛠️ Not Fully Implemented
