@@ -1,5 +1,83 @@
 const globalValues = {};
 const globalFunctions = {};
+const project = {
+    sprites: [],
+    options: {
+        stageSize: {
+            width: 1600,
+            height: 900,
+            maintainAspectRatio: true
+        }
+    },
+    running: true,
+    stop: () =>{
+            for(let i=0; i<project.sprites.length; i++){
+                project.sprites[i].terminate(!1);
+            };
+            project.running = false;
+    },
+    start: (importFile, setupOnly) =>{
+        if(importFile){
+            project.options = importFile.options;
+            for(let i=0; i<importFile.sprites.length; i++){
+                const spriteImport = createSprite(importFile.sprites[i].costume);
+                getSprite(spriteImport).name = importFile.sprites[i].name;
+                getSprite(spriteImport).scripts = importFile.sprites[i].scripts;
+                getSprite(spriteImport).global = importFile.sprites[i].global;
+            }
+        }
+        if(!setupOnly){
+            project.idle = false;
+            for(let i=0; i<project.sprites.length; i++){
+                const scripts = project.sprites[i].scripts;
+                for(let j=0; j<scripts.length; j++){
+                    if(!scripts[j]) continue;
+                    if(scripts[j].event == 'start'){
+                        try{
+                            project.sprites[i].run(scripts[j].code);
+                        }catch(e){
+                            project.console.push({text: e.toString(), sprite: project.sprites[i].name, err: e, type: 'error', script: scripts[j].name});
+                        }
+                    }
+                };
+            };
+        }
+    },
+    console: [],
+    idle: true
+};
+window.__defineGetter__('project', () =>{
+    return project;
+})
+window.__defineSetter__('project', (value) =>{
+    return project = value;
+})
+window.__defineGetter__('globalValues', () =>{
+    return globalValues;
+})
+window.__defineSetter__('globalValues', (value) =>{
+    return globalValues = value;
+})
+window.__defineGetter__('getSprite', () =>{
+    return getSprite;
+})
+window.__defineSetter__('getSprite', (value) =>{
+    return getSprite = value;
+})
+window.__defineGetter__('createSprite', () =>{
+    return createSprite;
+})
+window.__defineSetter__('createSprite', (value) =>{
+    return createSprite = value;
+})
+
+function protectParent(){
+    const parentClone = {engineLoaded: parent.engineLoaded};
+        window.__defineGetter__('parent', () =>{
+            return parentClone;
+    })
+}
+if(parent && !!parent.protect) protectParent()
 globalValues.FPS = 60;
 globalValues.CPS = 100;
 globalValues.touches = [];
@@ -7,18 +85,10 @@ globalValues.fixedWidth = null;
 globalValues.fixedHeight = null;
 globalValues.touchTimeout = 0;
 globalFunctions.getFixedValue = function(dimension){
-    if(dimension == 'height'){
-        if(globalValues.fixedHeight == null){
-            return 1;
-        }else{
-            return globalFunctions.stage().clientHeight/globalValues.fixedHeight;
-        }
+    if(globalValues.fixedWidth == null){
+        return 1;
     }else{
-        if(globalValues.fixedWidth == null){
-            return 1;
-        }else{
-            return globalFunctions.stage().clientWidth/globalValues.fixedWidth;
-        }
+        return globalFunctions.stage().clientWidth/globalValues.fixedWidth
     }
 }
 globalFunctions.are_sprites_touching = function(sprite1, sprite2){
@@ -29,14 +99,14 @@ globalFunctions.are_sprites_touching = function(sprite1, sprite2){
     return isTouching
 };
 globalFunctions.stage = () => {
-    return document.querySelector('pillor') ? document.querySelector('pillor') : document.body;
+    return document.querySelector('pillor') ? document.querySelector('pillor').querySelector('div') : document.body;
 }
 window.addEventListener('load', function(){
     globalFunctions.stage().addEventListener('mousemove', function(e){
         let x = (e.clientX - globalFunctions.stage().getBoundingClientRect().left - (globalFunctions.stage().clientWidth/2));
         let y = (globalFunctions.stage().getBoundingClientRect().top + (globalFunctions.stage().clientHeight/2) - e.clientY);
-        globalValues.mouseX = x*globalFunctions.getFixedValue('width');
-        globalValues.mouseY = y*globalFunctions.getFixedValue('height');
+        globalValues.mouseX = x/globalFunctions.getFixedValue('width');
+        globalValues.mouseY = y/globalFunctions.getFixedValue('height');
         
     });
     globalFunctions.stage().addEventListener('touchstart', function(e){
@@ -61,7 +131,7 @@ globalFunctions.getDirection = function(startX, startY, endX, endY){
 };
 
 globalFunctions.getMaxLayer = function(){
-    const temp = sprites;
+    const temp = project.sprites;
     let max = 0;
     for(i = 0; i < temp.length; i++){
       if(temp[i].layer > max){
@@ -72,7 +142,7 @@ globalFunctions.getMaxLayer = function(){
 };
 
 globalFunctions.moveSpritesUp = function(){
-    const temp = sprites;
+    const temp = project.sprites;
     for(i = 0; i < temp.length; i++){
         temp[i].layer = temp[i].layer+1;
     };
