@@ -43,6 +43,10 @@ function rotate_left(deg){
    set_y_rotation(spriteData['3d'].rotateY - deg);
  };
 
+function rotate_z_left(deg){
+   point_in_direction(spriteData.direction - deg);
+ };
+
 function rotate_right(deg){
   point_in_direction(spriteData.direction + deg);
 };
@@ -53,6 +57,10 @@ function rotate_right(deg){
 
  function rotate_y_right(deg){
    set_y_rotation(spriteData['3d'].rotateY + deg);
+ };
+
+ function rotate_z_right(deg){
+   point_in_direction(spriteData.direction + deg);
  };
 
  function point_in_direction(dir){
@@ -70,6 +78,9 @@ function rotate_right(deg){
    globalFunctions.updateDirection();
  };
 
+function set_z_rotation(dir){
+  point_in_direction(dir);
+}
  function point_towards_mouse(){
   point_in_direction(globalFunctions.getDirection(spriteData.x, spriteData.y, globalValues.mouseX, globalValues.mouseY));
  };
