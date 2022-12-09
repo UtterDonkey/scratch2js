@@ -112,7 +112,10 @@ spriteObject = getSprite(mySprite);
 
 ### 🌟Tracing Sprite Objects
 
-`trace(spriteObject)` will return the original sprite object.
+`trace(spriteObject)` will return the original object for this sprite.
+
+NOTE: This function may be removed in the future.
+
 
 
 ### 🌟Packaging
