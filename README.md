@@ -63,7 +63,7 @@ spriteObject.run(go_forward, 2);
 // will move the sprite forward 2 layers
 
 ```
-🌟NOTE: `spriteObject.run(...)` will return the value returned from the executed script.
+NOTE: `spriteObject.run(...)` will return the value returned from the executed script.
 
 Example:
 ```js
@@ -113,7 +113,7 @@ spriteObject = getSprite(mySprite);
 
 
 
-### Packaging
+### 🌟Packaging
 
 NOTE: Importing projects from a string is for Pillor. You can only create projects like this using the Pillor Game Engine.
 
@@ -316,11 +316,11 @@ Set sprite's costume (display image) to url.
 Sets/changes sprite's size to `n%`.
 
 
-#### 🌟`set_height`, `change_height`
+#### `set_height`, `change_height`
 Sets/changes sprite's height to `n%`.
 
 
-#### 🌟`set_width`,  `change_width`
+#### `set_width`,  `change_width`
 Sets/changes sprite's width to `n%`.
 
 
@@ -391,7 +391,7 @@ NOTE: First loop is executed immediately instead of after 1 frame.
 
 
 
-### 🌟 Sprite Values
+### Sprite Values
 
 #### 📖`id`
 Will return the sprite's id.
@@ -447,7 +447,7 @@ Will return list of clones' IDs.
 
 Global values can be accessed from the `globalValues` object.
 
-#### 🌟`fixedHeight`, `fixedWidth`
+#### ⚒️ `fixedHeight`, `fixedWidth`
 Simulates the device screen being 'n' pixels. Default: `null`
 #### `mouseX`, `mouseY`
 Returns mouse X and Y position.
@@ -468,3 +468,18 @@ Returns an array of objects. Each object has a `mouseX` and `mouseY` key. This i
 
 
 The sprite's object can be accessed through `spriteData` in a function or script.
+
+
+### 🌟 Global Functions
+
+Global functions can be accessed from the `globalFunctions` object.
+
+#### `stage`
+
+Will return either `document.body` or the `div` inside the `pillor`.
+
+
+#### `are_sprites_touching`
+
+Requires 2 parameters, both sprites objects. Will return whether the likleyhood of the 2 sprites overlapping is above 50%.
+
