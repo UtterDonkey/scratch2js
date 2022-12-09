@@ -147,6 +147,13 @@ function clone(){
   const newClone = createSprite(cloneElem);
   getSprite(newClone).ref.id = 'sprite#' + getSprite(newClone).id;
   getSprite(newClone).original = spriteData.original;
+  getSprite(newClone).isOriginal = false;
+  const preventCopy = ['clones', 'freeze', 'id', 'isOriginal', 'layer', 'original', 'ref', 'renderProcess', 'run', 'terminate'];
+  for(i in spriteData){
+    if(!preventCopy.includes(i)){
+      getSprite(newClone)[i] = spriteData[i];
+    }
+  }
   spriteData.original.clones.push(newClone);
   return newClone;
 };
