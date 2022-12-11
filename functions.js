@@ -179,34 +179,49 @@ await wait(seconds*1000)
 };
 
 
-function repeat(n, callback, animate, callback2){
+function repeat(n, callback, animate, callback2, dataCarry){
+    if(dataCarry === undefined){
+      dataCarry = spriteData;
+    }else{
+      spriteData = dataCarry;
+    }
     for(i = 0; i < n; i++){
             if(animate){
-              setTimeout(function(){callback()}, 10*i);
+              setTimeout(callback(), 10*i, dataCarry);
             }else{
                 callback();
             };
     };
     if(callback2){
     if(animate){
-      setTimeout(function(){callback2()}, (1000/globalValues.CPS)*(n+1))
+      setTimeout(callback2, (1000/globalValues.CPS)*(n+1), dataCarry)
     }else{
       callback2()
     }
   }
 };
 
-function do_repeat(n, callback, callback2, m){
+function do_repeat(n, callback, callback2, m, dataCarry){
+      if(dataCarry === undefined){
+        dataCarry = spriteData;
+      }else{
+        spriteData = dataCarry;
+      }
       if(m === undefined) m =1;
       if(m > n){
         if(callback2) callback2()
       }else{
         callback()
-        setTimeout(do_repeat, 1000/globalValues.CPS, n, callback, callback2, m+1)
+        setTimeout(do_repeat, 1000/globalValues.CPS, n, callback, callback2, m+1, dataCarry)
     }
 };
 
-function forever(callback){
+function forever(callback, dataCarry){
+    if(dataCarry === undefined){
+      dataCarry = spriteData;
+    }else{
+      spriteData = dataCarry;
+    }
     callback();
-    setTimeout(function(){forever(callback);}, (1000/globalValues.CPS))
+    setTimeout(forever, (1000/globalValues.CPS), callback, dataCarry)
 }
