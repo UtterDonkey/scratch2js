@@ -9,6 +9,7 @@ const project = {
             maintainAspectRatio: true
         }
     },
+    events: [],
     running: true,
     stop: () =>{
             for(let i=0; i<project.sprites.length; i++){
@@ -83,6 +84,8 @@ globalValues.CPS = 100;
 globalValues.touches = [];
 globalValues.fixedWidth = null;
 globalValues.fixedHeight = null;
+globalValues.keysDown = [];
+globalValues.keyData = {};
 globalValues.touchTimeout = 0;
 globalFunctions.getFixedValue = function(dimension){
     if(globalValues.fixedWidth == null){
@@ -100,6 +103,10 @@ globalFunctions.are_sprites_touching = function(sprite1, sprite2){
 };
 globalFunctions.stage = () => {
     return document.querySelector('pillor') ? document.querySelector('pillor').querySelector('div') : document.body;
+}
+globalFunctions.execEvent = (ID, eventData) =>{
+    const event = project.events[ID];
+    if(event.active) getSprite(event.sprite).run(event.function, eventData);
 }
 window.addEventListener('load', function(){
     globalFunctions.stage().addEventListener('mousemove', function(e){
@@ -122,6 +129,48 @@ window.addEventListener('load', function(){
     });
     globalFunctions.stage().addEventListener('touchend', function(e){
         globalValues.touchTimeout = setTimeout(function(){globalValues.touches = [];}, 300);
+    });
+    globalFunctions.stage().addEventListener('keydown', (e) =>{
+        const keyData = {};
+        const modifiers = {
+            'ctrlKey': '^',
+            'shiftKey': '+',
+            'altKey': '%',
+            'metaKey': '!'
+        }
+        const modKeys = ['control', 'shift', 'alt', 'meta'];
+        const key = e.key.toLowerCase();
+        keyData.down = true;
+        if(globalValues.keysDown.includes(key)){
+            return
+        }else{
+            globalValues.keysDown.push(key);
+        }
+        if(!modKeys.includes(key)){
+        
+        let mod = '';
+        keyData.modifiers = [];
+        for(m in modifiers){
+            if(e[m]){
+                mod += modifiers[m];
+                keyData.modifiers.push(modifiers[m]);
+            }
+        };
+        mod += key;
+        keyData.modKey = mod;
+        if(mod !== key && !globalValues.keysDown.includes(mod)) globalValues.keysDown.push(mod);
+        }
+        globalValues.keyData[key] = keyData;
+    });
+
+    globalFunctions.stage().addEventListener('keyup', (e) =>{
+        const key = e.key.toLowerCase();
+        const keyData = globalValues.keyData[key];
+        if(globalValues.keysDown.includes(key)) globalValues.keysDown.splice(globalValues.keysDown.indexOf(key), 1);
+        if(globalValues.keysDown.includes(keyData.modKey)) globalValues.keysDown.splice(globalValues.keysDown.indexOf(keyData.modKey), 1);
+        keyData.down = false;
+        keyData.modifiers = [];
+        globalValues.keyData[key] = keyData;
     });
 });
 
