@@ -477,6 +477,32 @@ How many script cycles should be run per second (applies to loops only).
 NOTE: A `repeat` loop's CPS cannot be changed after execution has begun.
 
 
+#### 🌟`keysDown`
+Returns a list of all the keys down (`event.key`). If a key is held down with modifiers, a second entry will be added using like this: `[modifier symbol][key]`. The modifier symbols are as follows:
+* Control (CTRL): ^
+* Shift: +
+* Alt: %
+* Meta (Windows key etc.): !
+
+For example: ctrl+shift+t would be `^+t`
+
+
+#### 🌟`keyData`
+Returns an object containing all the keys that have been pressed and info abotu them.
+
+
+##### `keyData[i].down`
+Returns a boolean indicating whether or not the key is currently pressed down.
+
+
+##### 🧪`keyData[i].modifiers`
+Returns an array of all the modifier symbols in the `modKey`
+
+
+##### `keyData[i].modKey`
+Returns the second entry that was added to `keysDown` that included modifiers. If there are no modifiers, it will return the key without modifier symbols.
+
+
 #### 📖🧪`touches`
 Returns an array of objects. Each object has a `mouseX` and `mouseY` key. This is used for when a user on a mobile device taps in multiple places at once.
 ### Sprite Data
