@@ -2,8 +2,8 @@
 
 
 function move_steps(steps){
-  change_x(Math.sin(spriteData.direction - 90));
-  change_y(Math.cos(spriteData.direction - 90));
+  change_x(Math.sin(spriteData.direction - 90)*steps);
+  change_y(Math.cos(spriteData.direction - 90)*steps);
 };
 
 function set_x(x){
