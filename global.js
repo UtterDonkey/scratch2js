@@ -47,6 +47,9 @@ const project = {
     console: [],
     idle: true
 };
+
+// Removed as fix is in Pillor and not updated on GitHub. It is not required outside of Pillor.
+/*
 window.__defineGetter__('project', () =>{
     return project;
 })
@@ -71,6 +74,7 @@ window.__defineGetter__('createSprite', () =>{
 window.__defineSetter__('createSprite', (value) =>{
     return createSprite = value;
 })
+*/
 
 function protectParent(){
     const parentClone = {engineLoaded: parent.engineLoaded};
