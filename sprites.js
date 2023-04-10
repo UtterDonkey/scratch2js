@@ -7,7 +7,6 @@ function updateSprite(spriteID, data){
     let x = (data.x*globalFunctions.getFixedValue('width')) + (globalFunctions.stage().clientWidth/2);
     let y = -(data.y*globalFunctions.getFixedValue('height')) + (globalFunctions.stage().clientHeight/2);
     spriteID.style.position = 'absolute';
-    spriteID.style.pointerEvents = 'none';
     spriteID.style.left = x - (spriteID.clientWidth/2) + 'px';
     spriteID.style.top = y - (spriteID.clientHeight/2) + 'px';
     spriteID.style.display = data.hidden ? 'none' : '';
