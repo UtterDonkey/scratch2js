@@ -363,31 +363,36 @@ NOTE: Currently, the `speed` and `pitch` options are the same, changing the `pla
 
 The `play_sound` function will return an audio object. The audio object uses the same system as events and sprites however the `play_sound` function returns the object itself instead of an id to make the use of `until_done` easier.
 
-##### `audioObject`
+Example:
+
+
+
+
+#### `audioObject`
 The object returned by `play_sound`.
 
-###### `audioObject.audio`
+##### `audioObject.audio`
 The URL passed to the `play_sound` function.
 
-###### `audioObject.context`
+##### `audioObject.context`
 The HTML AudioContext.
 
-###### `audioObject.id`
+##### `audioObject.id`
 The id of the audio object. The audio object can be accessed with the id using `spriteData.sounds[id]`.
 
-###### `audioObject.ended`
+##### `audioObject.ended`
 Boolean, whether or not the audio has finished playing.
 
-###### `audioObject.until_done`
+##### `audioObject.until_done`
 A promise that is resolved when the audio ends.
 
-###### `audio.stop()`
+##### `audio.stop()`
 Will end the playback of the audio.
 
-###### `audioObject.pause()`
+##### `audioObject.pause()`
 Will pause the playback of the audio.
 
-###### `audioObject.resume()`
+##### `audioObject.resume()`
 Will resume the playback of the audio.
 
 
@@ -396,8 +401,9 @@ Will resume the playback of the audio.
 Loops can be used for any script and are not run from `spriteObject.run`.
 
 
-#### `repeat(loops, script, animate, callback)`
-Loop script `n` times. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, boolean, for whether or not to animate the frames. Has a fourth optional parameter, function, a callback to be run 1 frame after repeat loop is scheduled to end.
+#### `repeat(loops, script, callback)`
+Loop script `n` times. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, function, a callback to be run 1 frame after the loop ends.
+NOTE: First loop is executed immediately instead of after 1 frame.
 
 Example:
 ```js
@@ -432,9 +438,8 @@ rotate_right(1);
 ```
 
 
-#### 🧪`do_repeat(loops, script, callback)`
-Similar to an animated repeat loop, however all scripts are executed before next loop begins. May become a replacement for `repeat`. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, function, a callback to be run 1 frame after the loop ends.
-NOTE: First loop is executed immediately instead of after 1 frame.
+#### `legacy_repeat(loops, script, animate, callback)`
+Loop script `n` times. Requires 2 parameters, first for amount of times to repeat, second for the function to run. Has a third optional parameter, boolean, for whether or not to animate the frames. Has a fourth optional parameter, function, a callback to be run 1 frame after repeat loop is scheduled to end.
 
 
 
@@ -468,16 +473,20 @@ NOTE: changing these values is not recommended.
 Will return boolean indicating whether or not the sprite is hidden.
 
 
-#### 📖🌟`clones`
+#### `sounds`
+Will return a list of audio objects.
+
+
+#### 📖`clones`
 Will return array of clones' IDs.
 
 
-### 📖🌟`isOriginal`
+### 📖`isOriginal`
 
 Will return bollean indicating whether or not that sprite is the original sprite or is a clone.
 
 
-### 📖🌟`original`
+### 📖`original`
 
 Will return sprite object of original sprite.
 
