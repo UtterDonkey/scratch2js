@@ -152,6 +152,15 @@ div#canvas{
 }
 ```
 
+
+
+### Events
+
+#### Creating Events
+
+`createEvent()` will create an event for the current sprite.
+
+
 ### Deployment
 
 You can deploy your scripts on another site/HTML application using 4 different methods.
