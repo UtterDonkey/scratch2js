@@ -164,6 +164,8 @@ NOTE: Behaviour may change to make muitple events with the same javascript event
 
 #### Adding Function to Events
 
+`addEvent()` takes 2 paramters. The first is the id/name of the event to add the function to. The second is a function to be added to the event. The function will be run in the same context as the sprite running the `addEvent` function. When the event is executed, it will run the original script declared when it was created and all of the events added to it. If the `addEvent` function is run before the event is created, the engine may be able to "simulate" the existance of the event until it is created.
+
 
 ### Deployment
 
