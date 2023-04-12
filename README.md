@@ -8,7 +8,7 @@ Convert Scratch Projects To JavaScript
 
 🛠️ Not Fully Implemented
 
-🧊 Initiates 3D Engine (🛠️)
+🧊 Initiates 3D Engine
 
 📖 Intended for Read-only
 
