@@ -2,6 +2,8 @@
 # scratch2js
 Convert Scratch Projects To JavaScript
 
+This is also the documentation for Pillor - Game Engine
+
 ## Docs
 
 🧪 Experiment
