@@ -361,6 +361,29 @@ Will play the specified audio file given in the first paramter. The second, opti
 `pitch` - the pitch at which to play the audio, default is 1.
 NOTE: Currently, the `speed` and `pitch` options are the same, changing the `playbackRate` of the audio context.
 
+The `play_sound` function will return an audio object. The audio object uses the same system as events and sprites however the `play_sound` function returns the object itself instead of an id to make the use of `until_done` easier.
+
+##### `audioObject`
+The object returned by `play_sound`.
+
+###### `audioObject.audio`
+The URL passed to the `play_sound` function.
+
+###### `audioObject.context`
+The HTML AudioContext.
+
+###### `audioObject.id`
+The id of the audio object. The audio object can be accessed with the id using `spriteData.sounds[id]`.
+
+###### `audioObject.ended`
+Boolean, whether or not the audio has finished playing.
+
+###### `audioObject.until_done`
+A promise that is resolved when the audio ends.
+
+###### `audio`
+
+
 
 ### Loops
 Loops can be used for any script and are not run from `spriteObject.run`.
