@@ -110,7 +110,7 @@ spriteObject = getSprite(mySprite);
 `forceSpriteUpdate()` requires 1 parameter - the id of the sprite to update. It is the same id that is used in `getSprite()`. This script will immediately update the sprite without waiting until the next frame.
 
 
-### 🌟Tracing Sprite Objects
+### Tracing Sprite Objects
 
 `trace(spriteObject)` will return the original object for this sprite.
 
@@ -173,6 +173,32 @@ Use `getEvent(id)` to get an event by name or id.
 #### Broadcasting Events
 
 Use `broadcastEvent(id, data)` to execute an event. The second paramter is optional data given to the functions run by the event.
+
+
+
+### Variables
+
+These functions are intended for use in Pillor.
+
+
+#### `declare_variable(name, global)`
+
+Will create a variable with the specified name. The second paramter is optional and indicates whether or not the variable should be created for all sprites or only for the current sprite.
+
+
+#### `get_variable(name)`
+
+Will return the specified variable's data. The data will return an object with the following values;
+
+##### 📖`name`
+
+Will return the name of the specified variable.
+
+
+##### `value`
+
+Will return the value of the specified variable, this is also how the variable's value is changed.
+
 
 
 ### Deployment
