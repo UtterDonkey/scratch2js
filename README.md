@@ -158,13 +158,21 @@ div#canvas{
 
 #### Creating Events
 
-`createEvent()` will create an event for the current sprite. It requires 2 paramters and can take an option third. The first is the name of the event. If this is the name of a JavaScript event, the event will be executed on the event. The second paramater is the function to be run, it will be run in the same context as the sprite running it. The third paramter is a boolean indicating whether or not the JavaScript event (if it exists) should be listened to on the sprite instead of the stage. The function will return the id of the event created.
+`createEvent()` will create an event for the current sprite. It requires 2 paramters and can take an option third. The first is the name of the event. If this is the name of a JavaScript event, the event's functions will be executed on the event. The functions will also be passed the data from the JavaScript event. The second paramater is the function to be run, it will be run in the same context as the sprite running it. The third paramter is a boolean indicating whether or not the JavaScript event (if it exists) should be listened to on the sprite instead of the stage. The function will return the id of the event created.
 NOTE: Behaviour may change to make muitple events with the same javascript event without requiring mutiple events with the same name.
 
 
 #### Adding Function to Events
 
 `addEvent()` takes 2 paramters. The first is the id/name of the event to add the function to. The second is a function to be added to the event. The function will be run in the same context as the sprite running the `addEvent` function. When the event is executed, it will run the original script declared when it was created and all of the events added to it. If the `addEvent` function is run before the event is created, the engine may be able to "simulate" the existance of the event until it is created.
+
+#### Getting Event Objects
+
+Use `getEvent(id)` to get an event by name or id.
+
+#### Broadcasting Events
+
+Use `broadcastEvent(id, data)` to execute an event. The second paramter is optional data given to the functions run by the event.
 
 
 ### Deployment
@@ -601,5 +609,9 @@ Example:
 spriteObject.run(point_in_direction, globalFunctions.getDirection(spriteData.x, spriteData.y, 0, 0));
 // will point towards centre
 ```
+
+#### `execEvent(id, data)`
+
+The underlying function of `broadcastEvent`.
 
 
