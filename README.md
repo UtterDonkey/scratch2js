@@ -341,12 +341,10 @@ Value from 0-100. Sets/changes opacity of sprite.
 
 
 #### `clone()`
-
 Will create a new sprite with the same properties as the current sprite. It will return the ID of the new sprite.
 
 
 #### `terminateClone()`
-
 Will terminate the sprite if it is a clone.
 
 
@@ -354,6 +352,14 @@ Will terminate the sprite if it is a clone.
 #### `await pause`
 Pause current thread for `n` seconds.
 
+
+#### `play_sound(audio, options)`
+Will play the specified audio file given in the first paramter. The second, optional, paramter is an object that may specify the following options;
+
+`volume` - the volume at which to play the audio, default is 1.
+`speed` - the speed at which to play the audio, default is 1.
+`pitch` - the pitch at which to play the audio, default is 1.
+NOTE: Currently, the `speed` and `pitch` options are the same, changing the `playbackRate` of the audio context.
 
 
 ### Loops
