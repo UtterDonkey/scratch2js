@@ -381,7 +381,14 @@ Boolean, whether or not the audio has finished playing.
 ###### `audioObject.until_done`
 A promise that is resolved when the audio ends.
 
-###### `audio`
+###### `audio.stop()`
+Will end the playback of the audio.
+
+###### `audioObject.pause()`
+Will pause the playback of the audio.
+
+###### `audioObject.resume()`
+Will resume the playback of the audio.
 
 
 
