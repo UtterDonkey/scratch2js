@@ -158,7 +158,11 @@ div#canvas{
 
 #### Creating Events
 
-`createEvent()` will create an event for the current sprite.
+`createEvent()` will create an event for the current sprite. It requires 2 paramters and can take an option third. The first is the name of the event. If this is the name of a JavaScript event, the event will be executed on the event. The second paramater is the function to be run, it will be run in the same context as the sprite running it. The third paramter is a boolean indicating whether or not the JavaScript event (if it exists) should be listened to on the sprite instead of the stage. The function will return the id of the event created.
+NOTE: Behaviour may change to make muitple events with the same javascript event without requiring mutiple events with the same name.
+
+
+#### Adding Function to Events
 
 
 ### Deployment
