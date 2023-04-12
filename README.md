@@ -118,7 +118,7 @@ NOTE: This function may be removed in the future.
 
 
 
-### 🌟Packaging
+### Packaging
 
 NOTE: Importing projects from a string is for Pillor. You can only create projects like this using the Pillor Game Engine.
 
@@ -332,7 +332,7 @@ Move forward/backward `n` layers.
 Go to front/back of all other sprites.
 
 
-#### 🧪`go_to_layer(value)`
+#### `go_to_layer(value)`
 Move to specific layer.
 
 
@@ -340,12 +340,18 @@ Move to specific layer.
 Value from 0-100. Sets/changes opacity of sprite.
 
 
-#### 🌟`clone()`
+#### `clone()`
 
 Will create a new sprite with the same properties as the current sprite. It will return the ID of the new sprite.
 
 
-#### 🛠️`await pause`
+#### `terminateClone()`
+
+Will terminate the sprite if it is a clone.
+
+
+
+#### `await pause`
 Pause current thread for `n` seconds.
 
 
